@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 export default function Hero() {
   const [loaded, setLoaded] = useState(false);
@@ -170,7 +171,7 @@ export default function Hero() {
             transition: 'opacity 0.7s ease 0.5s, transform 0.7s ease 0.5s',
           }}
         >
-          <a
+          <Link
             href="/manufacturers"
             style={{
               fontFamily: "'Big Shoulders Display', sans-serif",
@@ -199,9 +200,9 @@ export default function Hero() {
             }}
           >
             Our Line Card
-          </a>
+          </Link>
 
-          <a
+          <Link
             href="/team"
             style={{
               fontFamily: "'Big Shoulders Display', sans-serif",
@@ -229,7 +230,7 @@ export default function Hero() {
             }}
           >
             Meet the Team
-          </a>
+          </Link>
         </div>
 
         {/* Scroll indicator */}

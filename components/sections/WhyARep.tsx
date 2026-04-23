@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 
 function useFadeIn(threshold = 0.12) {
   const ref = useRef<HTMLDivElement>(null);
@@ -275,7 +276,7 @@ export default function WhyARep() {
           </div>
 
           {/* CTA */}
-          <a
+          <Link
             href="/contact"
             style={{
               fontFamily: "'Big Shoulders Display', sans-serif",
@@ -296,7 +297,7 @@ export default function WhyARep() {
             onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.backgroundColor = 'oklch(72% 0.085 140)'}
           >
             Inquire About Representation →
-          </a>
+          </Link>
         </div>
       </div>
     </section>

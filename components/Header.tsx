@@ -73,7 +73,6 @@ export default function Header() {
           {/* Desktop Nav */}
           <nav
             style={{
-              display: 'flex',
               alignItems: 'center',
               gap: '0.25rem',
             }}
@@ -155,7 +154,6 @@ export default function Header() {
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
             style={{
-              display: 'flex',
               flexDirection: 'column',
               gap: '5px',
               background: 'none',
@@ -163,7 +161,7 @@ export default function Header() {
               cursor: 'pointer',
               padding: '0.5rem',
             }}
-            className="md:hidden"
+            className="flex md:hidden"
           >
             {[0, 1, 2].map((i) => (
               <span
@@ -203,6 +201,7 @@ export default function Header() {
             flexDirection: 'column',
             padding: '2rem clamp(1.25rem, 4vw, 2.5rem)',
             gap: '0.25rem',
+            overflowY: 'auto',
           }}
         >
           {NAV_LINKS.map((link) => (

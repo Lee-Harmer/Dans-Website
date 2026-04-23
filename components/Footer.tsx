@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 const NAV = [
   { label: 'Home', href: '/' },
@@ -99,7 +100,7 @@ export default function Footer() {
             </p>
             <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.625rem' }}>
               {NAV.map((link) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
                   style={{
@@ -113,7 +114,7 @@ export default function Footer() {
                   onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = 'oklch(60% 0.022 140)'}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>
@@ -153,7 +154,7 @@ export default function Footer() {
                   >
                     {item.label}
                   </p>
-                  <a
+                  <Link
                     href={item.href}
                     style={{
                       fontFamily: "'Chivo', sans-serif",
@@ -166,7 +167,7 @@ export default function Footer() {
                     onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = 'oklch(60% 0.022 140)'}
                   >
                     {item.value}
-                  </a>
+                  </Link>
                 </div>
               ))}
             </div>
