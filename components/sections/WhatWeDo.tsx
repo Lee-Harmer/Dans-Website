@@ -11,7 +11,7 @@ const DIVISIONS = [
     markets: ['Medical', 'Industrial', 'Military', 'Off-Road Vehicle'],
     description: 'The Electronic Group provides design solutions and support for the most demanding applications. Our team is fluent in the technical language of the engineers and procurement professionals we serve, and so are our manufacturers.',
     whyItMatters: 'When your product needs to perform in a hospital OR or a military vehicle, you need a rep who understands the certification requirements, the qualification process, and the supply chain. ECS Electronic has been doing this for decades.',
-    accentColor: 'oklch(47% 0.112 140)',
+    accentColor: 'oklch(47% 0.112 252)',
   },
   {
     num: '02',
@@ -21,7 +21,7 @@ const DIVISIONS = [
     markets: ['Consulting Engineers', 'Integrators', 'Industrial OEM', 'Contractors', 'End Users'],
     description: 'The Electrical Group focuses on the full commercial and industrial supply chain, from the consulting engineer who specs a product, to the contractor who installs it, to the end user who depends on it.',
     whyItMatters: 'Electrical products live and die on relationships. Distributors, contractors, and specifying engineers all need different conversations. ECS Electrical has the contacts and the credibility to navigate every step of the sales cycle.',
-    accentColor: 'oklch(39% 0.115 140)',
+    accentColor: 'oklch(39% 0.115 252)',
   },
   {
     num: '03',
@@ -31,7 +31,7 @@ const DIVISIONS = [
     markets: ['Data Centers', 'Commercial Buildings', 'Enterprise', 'Infrastructure'],
     description: 'Launched in 1992 when structured cabling was in its infancy, the Networking Group recognized a transforming market before most. Today we serve the full spectrum of connected infrastructure with the same technical depth as our other divisions.',
     whyItMatters: 'ECS was building networking relationships when Cat5 was brand new. That institutional knowledge, of the products, the certifications, and the customer base, is not something you can replicate in a year.',
-    accentColor: 'oklch(33% 0.118 140)',
+    accentColor: 'oklch(33% 0.118 252)',
   },
 ];
 
@@ -81,7 +81,7 @@ function DivisionBlock({ div, index }: { div: typeof DIVISIONS[0], index: number
             fontSize: 'clamp(4rem, 9vw, 8rem)',
             lineHeight: 1,
             letterSpacing: '-0.04em',
-            color: 'oklch(82% 0.02 140)',
+            color: 'oklch(82% 0.02 252)',
             userSelect: 'none',
             width: 'clamp(70px, 10vw, 130px)',
             paddingTop: '0.05em',
@@ -100,7 +100,7 @@ function DivisionBlock({ div, index }: { div: typeof DIVISIONS[0], index: number
                 fontSize: 'clamp(1.5rem, 2.8vw, 2.375rem)',
                 lineHeight: 1.05,
                 letterSpacing: '-0.015em',
-                color: 'oklch(15% 0.022 140)',
+                color: 'oklch(15% 0.022 252)',
               }}
             >
               {div.name}
@@ -126,7 +126,7 @@ function DivisionBlock({ div, index }: { div: typeof DIVISIONS[0], index: number
               fontFamily: "'Chivo', sans-serif",
               fontSize: 'clamp(0.9375rem, 1.3vw, 1.0625rem)',
               lineHeight: 1.7,
-              color: 'oklch(44% 0.038 140)',
+              color: 'oklch(44% 0.038 252)',
               maxWidth: '60ch',
               marginBottom: '1.5rem',
             }}
@@ -143,7 +143,7 @@ function DivisionBlock({ div, index }: { div: typeof DIVISIONS[0], index: number
                 fontSize: '0.625rem',
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase',
-                color: 'oklch(60% 0.022 140)',
+                color: 'oklch(60% 0.022 252)',
                 alignSelf: 'center',
                 marginRight: '0.25rem',
               }}
@@ -157,8 +157,8 @@ function DivisionBlock({ div, index }: { div: typeof DIVISIONS[0], index: number
                   fontFamily: "'Chivo', sans-serif",
                   fontSize: '0.8125rem',
                   fontWeight: 500,
-                  color: 'oklch(27% 0.112 140)',
-                  backgroundColor: 'oklch(93% 0.025 140)',
+                  color: 'oklch(27% 0.112 252)',
+                  backgroundColor: 'oklch(93% 0.025 252)',
                   padding: '0.25rem 0.75rem',
                   borderRadius: '2px',
                 }}
@@ -205,11 +205,11 @@ function DivisionBlock({ div, index }: { div: typeof DIVISIONS[0], index: number
                 fontStyle: 'italic',
                 fontSize: '0.9375rem',
                 lineHeight: 1.7,
-                color: 'oklch(44% 0.038 140)',
+                color: 'oklch(44% 0.038 252)',
                 maxWidth: '58ch',
                 marginTop: '1rem',
                 paddingTop: '1rem',
-                borderTop: '1px solid oklch(91% 0.009 140)',
+                borderTop: '1px solid oklch(91% 0.009 252)',
               }}
             >
               {div.whyItMatters}
@@ -228,7 +228,7 @@ export default function WhatWeDo() {
     <section
       id="what-we-do"
       style={{
-        backgroundColor: 'oklch(98% 0.005 140)',
+        backgroundColor: 'oklch(98% 0.005 252)',
         padding: 'clamp(5rem, 10vw, 9rem) clamp(1.25rem, 4vw, 2.5rem)',
       }}
     >
@@ -254,7 +254,7 @@ export default function WhatWeDo() {
                 fontSize: '0.6875rem',
                 letterSpacing: '0.13em',
                 textTransform: 'uppercase',
-                color: 'oklch(47% 0.112 140)',
+                color: 'oklch(47% 0.112 252)',
                 marginBottom: '1rem',
               }}
             >
@@ -267,7 +267,7 @@ export default function WhatWeDo() {
                 fontSize: 'clamp(2.25rem, 5vw, 4.5rem)',
                 lineHeight: 0.97,
                 letterSpacing: '-0.02em',
-                color: 'oklch(15% 0.022 140)',
+                color: 'oklch(15% 0.022 252)',
               }}
             >
               SPECIALIZED
@@ -281,7 +281,7 @@ export default function WhatWeDo() {
                 fontFamily: "'Chivo', sans-serif",
                 fontSize: 'clamp(1rem, 1.4vw, 1.125rem)',
                 lineHeight: 1.7,
-                color: 'oklch(44% 0.038 140)',
+                color: 'oklch(44% 0.038 252)',
                 maxWidth: '50ch',
               }}
             >

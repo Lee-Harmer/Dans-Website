@@ -19,9 +19,9 @@ function useFadeIn() {
 const inputStyle = {
   fontFamily: "'Chivo', sans-serif",
   fontSize: '0.9375rem',
-  color: 'oklch(99.5% 0.003 140)',
-  backgroundColor: 'oklch(33% 0.118 140)',
-  border: '1px solid oklch(39% 0.115 140)',
+  color: 'oklch(99.5% 0.003 252)',
+  backgroundColor: 'oklch(33% 0.07 252)',
+  border: '1px solid oklch(39% 0.06 252)',
   borderRadius: '3px',
   padding: '0.875rem 1rem',
   width: '100%',
@@ -36,7 +36,7 @@ const labelStyle: React.CSSProperties = {
   fontSize: '0.6875rem',
   letterSpacing: '0.1em',
   textTransform: 'uppercase',
-  color: 'oklch(62% 0.1 140)',
+  color: 'oklch(62% 0.1 252)',
   marginBottom: '0.5rem',
   display: 'block',
 };
@@ -63,7 +63,7 @@ export default function Contact() {
     <section
       id="contact"
       style={{
-        backgroundColor: 'oklch(27% 0.112 140)',
+        backgroundColor: 'oklch(27% 0.112 252)',
         padding: 'clamp(5rem, 10vw, 9rem) clamp(1.25rem, 4vw, 2.5rem)',
         position: 'relative',
         overflow: 'hidden',
@@ -96,7 +96,7 @@ export default function Contact() {
               fontSize: '0.6875rem',
               letterSpacing: '0.13em',
               textTransform: 'uppercase',
-              color: 'oklch(62% 0.1 140)',
+              color: 'oklch(62% 0.1 252)',
               marginBottom: '1rem',
             }}
           >
@@ -110,7 +110,7 @@ export default function Contact() {
               fontSize: 'clamp(2.25rem, 5vw, 4.5rem)',
               lineHeight: 0.97,
               letterSpacing: '-0.02em',
-              color: 'oklch(99.5% 0.003 140)',
+              color: 'oklch(99.5% 0.003 252)',
               marginBottom: 'clamp(1.5rem, 3vw, 2rem)',
             }}
           >
@@ -124,7 +124,7 @@ export default function Contact() {
               fontFamily: "'Chivo', sans-serif",
               fontSize: 'clamp(1rem, 1.4vw, 1.0625rem)',
               lineHeight: 1.7,
-              color: 'oklch(62% 0.1 140)',
+              color: 'oklch(62% 0.1 252)',
               maxWidth: '44ch',
               marginBottom: '2.5rem',
             }}
@@ -137,58 +137,58 @@ export default function Contact() {
           {/* Contact details */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             <div>
-              <p style={{ fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 700, fontSize: '0.6875rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'oklch(47% 0.112 140)', marginBottom: '0.25rem' }}>
+              <p style={{ fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 700, fontSize: '0.6875rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'oklch(47% 0.075 252)', marginBottom: '0.25rem' }}>
                 Technical &amp; Commercial
               </p>
               <a
                 href="tel:9529469510"
-                style={{ fontFamily: "'Chivo', sans-serif", fontSize: '1.125rem', fontWeight: 600, color: 'oklch(84% 0.05 140)', textDecoration: 'none', display: 'block', marginBottom: '0.125rem', transition: 'color 0.15s' }}
-                onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = 'oklch(99.5% 0.003 140)'}
-                onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = 'oklch(84% 0.05 140)'}
+                style={{ fontFamily: "'Chivo', sans-serif", fontSize: '1.125rem', fontWeight: 600, color: 'oklch(84% 0.05 252)', textDecoration: 'none', display: 'block', marginBottom: '0.125rem', transition: 'color 0.15s' }}
+                onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = 'oklch(99.5% 0.003 252)'}
+                onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = 'oklch(84% 0.05 252)'}
               >
                 (952) 946-9510
               </a>
               <a
                 href="mailto:info@ecs-sales.com"
-                style={{ fontFamily: "'Chivo', sans-serif", fontSize: '0.9375rem', color: 'oklch(62% 0.1 140)', textDecoration: 'none', transition: 'color 0.15s' }}
-                onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = 'oklch(84% 0.05 140)'}
-                onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = 'oklch(62% 0.1 140)'}
+                style={{ fontFamily: "'Chivo', sans-serif", fontSize: '0.9375rem', color: 'oklch(62% 0.1 252)', textDecoration: 'none', transition: 'color 0.15s' }}
+                onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = 'oklch(84% 0.05 252)'}
+                onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = 'oklch(62% 0.1 252)'}
               >
                 info@ecs-sales.com
               </a>
             </div>
 
             <div>
-              <p style={{ fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 700, fontSize: '0.6875rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'oklch(47% 0.112 140)', marginBottom: '0.25rem' }}>
+              <p style={{ fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 700, fontSize: '0.6875rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'oklch(47% 0.075 252)', marginBottom: '0.25rem' }}>
                 Representation Inquiries
               </p>
-              <p style={{ fontFamily: "'Chivo', sans-serif", fontSize: '0.9375rem', color: 'oklch(84% 0.05 140)', fontWeight: 500, marginBottom: '0.125rem' }}>
+              <p style={{ fontFamily: "'Chivo', sans-serif", fontSize: '0.9375rem', color: 'oklch(84% 0.05 252)', fontWeight: 500, marginBottom: '0.125rem' }}>
                 David Gartner
               </p>
               <a
                 href="tel:9529147201"
-                style={{ fontFamily: "'Chivo', sans-serif", fontSize: '0.9375rem', color: 'oklch(62% 0.1 140)', textDecoration: 'none', display: 'block', marginBottom: '0.125rem', transition: 'color 0.15s' }}
-                onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = 'oklch(84% 0.05 140)'}
-                onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = 'oklch(62% 0.1 140)'}
+                style={{ fontFamily: "'Chivo', sans-serif", fontSize: '0.9375rem', color: 'oklch(62% 0.1 252)', textDecoration: 'none', display: 'block', marginBottom: '0.125rem', transition: 'color 0.15s' }}
+                onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = 'oklch(84% 0.05 252)'}
+                onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = 'oklch(62% 0.1 252)'}
               >
                 (952) 914-7201
               </a>
               <a
                 href="mailto:dgartner@ecs-sales.com"
-                style={{ fontFamily: "'Chivo', sans-serif", fontSize: '0.9375rem', color: 'oklch(62% 0.1 140)', textDecoration: 'none', transition: 'color 0.15s' }}
-                onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = 'oklch(84% 0.05 140)'}
-                onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = 'oklch(62% 0.1 140)'}
+                style={{ fontFamily: "'Chivo', sans-serif", fontSize: '0.9375rem', color: 'oklch(62% 0.1 252)', textDecoration: 'none', transition: 'color 0.15s' }}
+                onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = 'oklch(84% 0.05 252)'}
+                onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = 'oklch(62% 0.1 252)'}
               >
                 dgartner@ecs-sales.com
               </a>
             </div>
 
             <div>
-              <p style={{ fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 700, fontSize: '0.6875rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'oklch(47% 0.112 140)', marginBottom: '0.25rem' }}>
+              <p style={{ fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 700, fontSize: '0.6875rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'oklch(47% 0.075 252)', marginBottom: '0.25rem' }}>
                 Office
               </p>
               <address
-                style={{ fontFamily: "'Chivo', sans-serif", fontSize: '0.9375rem', color: 'oklch(62% 0.1 140)', fontStyle: 'normal', lineHeight: 1.6 }}
+                style={{ fontFamily: "'Chivo', sans-serif", fontSize: '0.9375rem', color: 'oklch(62% 0.1 252)', fontStyle: 'normal', lineHeight: 1.6 }}
               >
                 12301 Whitewater Drive, Suite 130<br />
                 Minnetonka, MN 55343
@@ -196,10 +196,10 @@ export default function Contact() {
             </div>
 
             <div>
-              <p style={{ fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 700, fontSize: '0.6875rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'oklch(47% 0.112 140)', marginBottom: '0.25rem' }}>
+              <p style={{ fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 700, fontSize: '0.6875rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'oklch(47% 0.075 252)', marginBottom: '0.25rem' }}>
                 Hours
               </p>
-              <p style={{ fontFamily: "'Chivo', sans-serif", fontSize: '0.9375rem', color: 'oklch(62% 0.1 140)' }}>
+              <p style={{ fontFamily: "'Chivo', sans-serif", fontSize: '0.9375rem', color: 'oklch(62% 0.1 252)' }}>
                 Monday – Friday: 8:00 AM – 5:00 PM CDT
               </p>
             </div>
@@ -218,14 +218,14 @@ export default function Contact() {
             <div
               style={{
                 padding: '3rem',
-                backgroundColor: 'oklch(33% 0.118 140)',
+                backgroundColor: 'oklch(33% 0.07 252)',
                 borderRadius: '4px',
                 textAlign: 'center',
               }}
             >
-              <div style={{ fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 900, fontSize: '4rem', color: 'oklch(72% 0.085 140)', lineHeight: 1, marginBottom: '1rem' }}>✓</div>
-              <h3 style={{ fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 800, fontSize: '1.75rem', color: 'oklch(99.5% 0.003 140)', marginBottom: '0.75rem' }}>Message Received</h3>
-              <p style={{ fontFamily: "'Chivo', sans-serif", color: 'oklch(62% 0.1 140)', fontSize: '1rem' }}>
+              <div style={{ fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 900, fontSize: '4rem', color: 'oklch(72% 0.085 252)', lineHeight: 1, marginBottom: '1rem' }}>✓</div>
+              <h3 style={{ fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 800, fontSize: '1.75rem', color: 'oklch(99.5% 0.003 252)', marginBottom: '0.75rem' }}>Message Received</h3>
+              <p style={{ fontFamily: "'Chivo', sans-serif", color: 'oklch(62% 0.1 252)', fontSize: '1rem' }}>
                 We'll get back to you within one business day.
               </p>
             </div>
@@ -235,14 +235,14 @@ export default function Contact() {
                 <div>
                   <label htmlFor="name" style={labelStyle}>Full Name</label>
                   <input id="name" type="text" value={form.name} onChange={(e) => setForm(p => ({ ...p, name: e.target.value }))} placeholder="Jane Smith" style={inputStyle}
-                    onFocus={(e) => (e.currentTarget as HTMLElement).style.borderColor = 'oklch(62% 0.1 140)'}
-                    onBlur={(e) => (e.currentTarget as HTMLElement).style.borderColor = 'oklch(39% 0.115 140)'} />
+                    onFocus={(e) => (e.currentTarget as HTMLElement).style.borderColor = 'oklch(62% 0.1 252)'}
+                    onBlur={(e) => (e.currentTarget as HTMLElement).style.borderColor = 'oklch(39% 0.06 252)'} />
                 </div>
                 <div>
                   <label htmlFor="company" style={labelStyle}>Company</label>
                   <input id="company" type="text" value={form.company} onChange={(e) => setForm(p => ({ ...p, company: e.target.value }))} placeholder="Acme Corp" style={inputStyle}
-                    onFocus={(e) => (e.currentTarget as HTMLElement).style.borderColor = 'oklch(62% 0.1 140)'}
-                    onBlur={(e) => (e.currentTarget as HTMLElement).style.borderColor = 'oklch(39% 0.115 140)'} />
+                    onFocus={(e) => (e.currentTarget as HTMLElement).style.borderColor = 'oklch(62% 0.1 252)'}
+                    onBlur={(e) => (e.currentTarget as HTMLElement).style.borderColor = 'oklch(39% 0.06 252)'} />
                 </div>
               </div>
 
@@ -250,14 +250,14 @@ export default function Contact() {
                 <div>
                   <label htmlFor="email" style={labelStyle}>Email</label>
                   <input id="email" type="email" value={form.email} onChange={(e) => setForm(p => ({ ...p, email: e.target.value }))} placeholder="jane@company.com" style={inputStyle}
-                    onFocus={(e) => (e.currentTarget as HTMLElement).style.borderColor = 'oklch(62% 0.1 140)'}
-                    onBlur={(e) => (e.currentTarget as HTMLElement).style.borderColor = 'oklch(39% 0.115 140)'} />
+                    onFocus={(e) => (e.currentTarget as HTMLElement).style.borderColor = 'oklch(62% 0.1 252)'}
+                    onBlur={(e) => (e.currentTarget as HTMLElement).style.borderColor = 'oklch(39% 0.06 252)'} />
                 </div>
                 <div>
                   <label htmlFor="phone" style={labelStyle}>Phone</label>
                   <input id="phone" type="tel" value={form.phone} onChange={(e) => setForm(p => ({ ...p, phone: e.target.value }))} placeholder="(555) 000-0000" style={inputStyle}
-                    onFocus={(e) => (e.currentTarget as HTMLElement).style.borderColor = 'oklch(62% 0.1 140)'}
-                    onBlur={(e) => (e.currentTarget as HTMLElement).style.borderColor = 'oklch(39% 0.115 140)'} />
+                    onFocus={(e) => (e.currentTarget as HTMLElement).style.borderColor = 'oklch(62% 0.1 252)'}
+                    onBlur={(e) => (e.currentTarget as HTMLElement).style.borderColor = 'oklch(39% 0.06 252)'} />
                 </div>
               </div>
 
@@ -279,9 +279,9 @@ export default function Contact() {
                         borderRadius: '2px',
                         cursor: 'pointer',
                         transition: 'background-color 0.15s, border-color 0.15s, color 0.15s',
-                        border: form.type === opt ? '1px solid oklch(72% 0.085 140)' : '1px solid oklch(39% 0.115 140)',
-                        backgroundColor: form.type === opt ? 'oklch(72% 0.085 140)' : 'transparent',
-                        color: form.type === opt ? 'oklch(22% 0.095 140)' : 'oklch(62% 0.1 140)',
+                        border: form.type === opt ? '1px solid oklch(72% 0.085 252)' : '1px solid oklch(39% 0.06 252)',
+                        backgroundColor: form.type === opt ? 'oklch(72% 0.085 252)' : 'transparent',
+                        color: form.type === opt ? 'oklch(22% 0.095 252)' : 'oklch(62% 0.1 252)',
                       }}
                     >
                       {opt}
@@ -299,8 +299,8 @@ export default function Contact() {
                   placeholder="Tell us about your needs..."
                   rows={5}
                   style={{ ...inputStyle, resize: 'vertical', minHeight: '120px' }}
-                  onFocus={(e) => (e.currentTarget as HTMLElement).style.borderColor = 'oklch(62% 0.1 140)'}
-                  onBlur={(e) => (e.currentTarget as HTMLElement).style.borderColor = 'oklch(39% 0.115 140)'}
+                  onFocus={(e) => (e.currentTarget as HTMLElement).style.borderColor = 'oklch(62% 0.1 252)'}
+                  onBlur={(e) => (e.currentTarget as HTMLElement).style.borderColor = 'oklch(39% 0.06 252)'}
                 />
               </div>
 
@@ -312,8 +312,8 @@ export default function Contact() {
                   fontSize: '0.9375rem',
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase',
-                  color: 'oklch(27% 0.112 140)',
-                  backgroundColor: 'oklch(72% 0.085 140)',
+                  color: 'oklch(27% 0.112 252)',
+                  backgroundColor: 'oklch(72% 0.085 252)',
                   padding: '1rem 2rem',
                   borderRadius: '3px',
                   border: 'none',
@@ -321,8 +321,8 @@ export default function Contact() {
                   transition: 'background-color 0.2s',
                   alignSelf: 'flex-start',
                 }}
-                onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.backgroundColor = 'oklch(84% 0.05 140)'}
-                onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.backgroundColor = 'oklch(72% 0.085 140)'}
+                onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.backgroundColor = 'oklch(84% 0.05 252)'}
+                onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.backgroundColor = 'oklch(72% 0.085 252)'}
               >
                 Send Message →
               </button>

@@ -2,28 +2,28 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand greens — derived from logo's forest green (hue 140°) */
-  --color-green-950: oklch(20% 0.095 140);
-  --color-green-900: oklch(27% 0.112 140);
-  --color-green-800: oklch(33% 0.118 140);
-  --color-green-700: oklch(39% 0.115 140);
-  --color-green-600: oklch(47% 0.112 140);
-  --color-green-500: oklch(54% 0.107 140);
-  --color-green-400: oklch(62% 0.1 140);
-  --color-green-300: oklch(72% 0.085 140);
-  --color-green-200: oklch(84% 0.05 140);
-  --color-green-100: oklch(92% 0.025 140);
-  --color-green-50:  oklch(97% 0.012 140);
+  /* Brand blues — derived from logo's navy blue (hue 252°) */
+  --color-blue-950: oklch(20% 0.095 252);
+  --color-blue-900: oklch(27% 0.112 252);
+  --color-blue-800: oklch(33% 0.118 252);
+  --color-blue-700: oklch(39% 0.115 252);
+  --color-blue-600: oklch(47% 0.112 252);
+  --color-blue-500: oklch(54% 0.107 252);
+  --color-blue-400: oklch(62% 0.1 252);
+  --color-blue-300: oklch(72% 0.085 252);
+  --color-blue-200: oklch(84% 0.05 252);
+  --color-blue-100: oklch(92% 0.025 252);
+  --color-blue-50:  oklch(97% 0.012 252);
 
   /* Neutrals tinted to the brand hue */
-  --color-ink:         oklch(15% 0.022 140);
-  --color-ink-subtle:  oklch(44% 0.038 140);
-  --color-ink-faint:   oklch(60% 0.022 140);
-  --color-border:      oklch(85% 0.014 140);
-  --color-border-subtle: oklch(92% 0.008 140);
-  --color-surface:     oklch(95% 0.010 140);
-  --color-bg:          oklch(98% 0.005 140);
-  --color-white:       oklch(99.5% 0.003 140);
+  --color-ink:         oklch(15% 0.022 252);
+  --color-ink-subtle:  oklch(44% 0.038 252);
+  --color-ink-faint:   oklch(60% 0.022 252);
+  --color-border:      oklch(85% 0.014 252);
+  --color-border-subtle: oklch(92% 0.008 252);
+  --color-surface:     oklch(95% 0.010 252);
+  --color-bg:          oklch(98% 0.005 252);
+  --color-white:       oklch(99.5% 0.003 252);
 
   /* Fonts */
   --font-display: 'Big Shoulders Display', system-ui, sans-serif;
@@ -40,8 +40,8 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: oklch(98% 0.005 140);
-  color: oklch(15% 0.022 140);
+  background-color: oklch(98% 0.005 252);
+  color: oklch(15% 0.022 252);
   font-size: 1rem;
   line-height: 1.65;
   margin: 0;
@@ -108,7 +108,7 @@ h1, h2, h3, h4, h5 {
   font-weight: 900;
   font-size: clamp(5rem, 12vw, 11rem);
   line-height: 1;
-  color: oklch(92% 0.025 140); /* green-100 */
+  color: oklch(92% 0.025 252); /* green-100 */
   letter-spacing: -0.04em;
   user-select: none;
 }
@@ -145,7 +145,7 @@ h1, h2, h3, h4, h5 {
   left: 0.875rem;
   right: 0.875rem;
   height: 2px;
-  background: oklch(72% 0.085 140);
+  background: oklch(72% 0.085 252);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -157,12 +157,12 @@ h1, h2, h3, h4, h5 {
 
 /* ── Custom scrollbar ──────────────────────────── */
 ::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: oklch(95% 0.01 140); }
-::-webkit-scrollbar-thumb { background: oklch(39% 0.115 140); border-radius: 3px; }
+::-webkit-scrollbar-track { background: oklch(95% 0.01 252); }
+::-webkit-scrollbar-thumb { background: oklch(39% 0.115 252); border-radius: 3px; }
 
 /* ── Focus ring ────────────────────────────────── */
 :focus-visible {
-  outline: 2px solid oklch(47% 0.112 140);
+  outline: 2px solid oklch(47% 0.112 252);
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -188,7 +188,7 @@ h1, h2, h3, h4, h5 {
   gap: 0.5rem;
   align-items: start;
   padding: 1.25rem 1rem;
-  border-bottom: 1px solid oklch(22% 0.095 140);
+  border-bottom: 1px solid oklch(22% 0.095 252);
   transition: background-color 0.15s ease;
   cursor: default;
 }
@@ -231,6 +231,16 @@ h1, h2, h3, h4, h5 {
   }
 }
 
+/* ── Responsive: Territory grid ─────────────────── */
+.territory-grid {
+  grid-template-columns: 1fr !important;
+}
+@media (min-width: 860px) {
+  .territory-grid {
+    grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr) !important;
+  }
+}
+
 /* ── Responsive: Form 2-col grid ────────────────── */
 .form-grid-2 {
   display: grid;
@@ -247,7 +257,7 @@ h1, h2, h3, h4, h5 {
 @media (max-width: 599px) {
   .stats-grid > div {
     border-right: none !important;
-    border-bottom: 1px solid oklch(22% 0.095 140);
+    border-bottom: 1px solid oklch(22% 0.095 252);
   }
   .stats-grid > div:last-child {
     border-bottom: none;

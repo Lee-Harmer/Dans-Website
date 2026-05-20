@@ -8,7 +8,7 @@ function useFadeIn() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.1 }
+      { threshold: 0.08 }
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -16,336 +16,337 @@ function useFadeIn() {
   return { ref, visible };
 }
 
-/*
- * Simplified but geographically accurate SVG paths for Upper Midwest states.
- * ViewBox is roughly 700×420 covering the relevant portion of the US.
- * Each path is a simplified polygon, not census-precise, but recognisably shaped.
- */
-
-// Non-territory states shown as context (light gray)
-const CONTEXT_STATES: { id: string; d: string; label: string; lx: number; ly: number }[] = [
+const REPS = [
   {
-    id: 'MT',
-    d: 'M 40 20 L 240 20 L 240 80 L 180 82 L 160 120 L 40 118 Z',
-    label: 'MT', lx: 130, ly: 70,
+    id: 'rep1',
+    name: 'David Gartner',
+    title: 'Representation Inquiries',
+    phone: '(952) 914-7201',
+    email: 'dgartner@ecs-sales.com',
+    states: ['MN', 'WI'],
+    fill: '#3B6FBF',
+    fillActive: '#5589E0',
+    accent: 'oklch(62% 0.14 252)',
+    accentDark: 'oklch(72% 0.10 252)',
   },
   {
-    id: 'WY',
-    d: 'M 160 120 L 260 118 L 262 185 L 158 185 Z',
-    label: 'WY', lx: 210, ly: 152,
+    id: 'rep2',
+    name: 'Dani Gish',
+    title: 'Sales Representative',
+    phone: '651-324-0369',
+    email: 'dgish@ecs-sales.com',
+    states: ['IA', 'NE'],
+    fill: '#2E7D52',
+    fillActive: '#43B077',
+    accent: 'oklch(62% 0.13 155)',
+    accentDark: 'oklch(72% 0.10 155)',
   },
   {
-    id: 'CO',
-    d: 'M 158 185 L 262 185 L 264 255 L 156 253 Z',
-    label: 'CO', lx: 210, ly: 220,
+    id: 'rep3',
+    name: 'Team Member',
+    title: 'Sales Representative',
+    phone: '(952) 946-9510',
+    email: 'info@ecs-sales.com',
+    states: ['ND'],
+    fill: '#A06020',
+    fillActive: '#D4873A',
+    accent: 'oklch(70% 0.14 55)',
+    accentDark: 'oklch(78% 0.10 55)',
   },
   {
-    id: 'KS',
-    d: 'M 310 255 L 440 257 L 438 305 L 308 302 Z',
-    label: 'KS', lx: 373, ly: 278,
-  },
-  {
-    id: 'MO',
-    d: 'M 440 215 L 520 217 L 524 260 L 510 285 L 490 295 L 438 305 L 440 257 Z',
-    label: 'MO', lx: 480, ly: 260,
-  },
-  {
-    id: 'IL',
-    d: 'M 520 155 L 560 157 L 562 240 L 548 280 L 524 260 L 520 217 Z',
-    label: 'IL', lx: 541, ly: 210,
-  },
-  {
-    id: 'MI',
-    d: 'M 560 75 L 620 72 L 625 130 L 580 145 L 562 155 L 560 157 L 560 75 Z',
-    label: 'MI', lx: 590, ly: 110,
-  },
-];
-
-// ECS territory states (filled with brand green)
-const TERRITORY_STATES: { id: string; d: string; label: string; name: string; lx: number; ly: number }[] = [
-  {
-    id: 'ND',
-    d: 'M 240 20 L 370 18 L 372 90 L 240 88 Z',
-    label: 'ND', name: 'North Dakota', lx: 305, ly: 54,
-  },
-  {
-    id: 'MN',
-    d: 'M 370 18 L 470 20 L 475 50 L 510 55 L 512 100 L 500 120 L 490 145 L 488 165 L 475 165 L 470 175 L 460 178 L 450 170 L 372 168 L 372 90 Z',
-    label: 'MN', name: 'Minnesota', lx: 430, ly: 95,
-  },
-  {
-    id: 'WI',
-    d: 'M 490 145 L 500 120 L 512 100 L 520 105 L 540 100 L 560 120 L 562 155 L 560 157 L 520 155 L 510 165 L 498 172 L 488 165 L 490 145 Z',
-    label: 'WI', name: 'Wisconsin', lx: 528, ly: 135,
-  },
-  {
-    id: 'SD',
-    d: 'M 240 88 L 372 90 L 372 168 L 238 165 Z',
-    label: 'SD', name: 'South Dakota', lx: 305, ly: 128,
-  },
-  {
-    id: 'NE',
-    d: 'M 238 165 L 372 168 L 370 240 L 310 240 L 308 255 L 236 253 Z',
-    label: 'NE', name: 'Nebraska', lx: 300, ly: 207,
-  },
-  {
-    id: 'IA',
-    d: 'M 372 168 L 450 170 L 460 178 L 475 175 L 480 200 L 475 215 L 460 220 L 440 215 L 440 240 L 370 240 Z',
-    label: 'IA', name: 'Iowa', lx: 420, ly: 202,
+    id: 'rep4',
+    name: 'Team Member',
+    title: 'Sales Representative',
+    phone: '(952) 946-9510',
+    email: 'info@ecs-sales.com',
+    states: ['SD'],
+    fill: '#8B2020',
+    fillActive: '#C04040',
+    accent: 'oklch(65% 0.15 0)',
+    accentDark: 'oklch(75% 0.10 0)',
   },
 ];
 
-const TERRITORY_LIST = [
-  { abbr: 'MN', name: 'Minnesota' },
-  { abbr: 'WI', name: 'Wisconsin' },
-  { abbr: 'IA', name: 'Iowa' },
-  { abbr: 'ND', name: 'North Dakota' },
-  { abbr: 'SD', name: 'South Dakota' },
-  { abbr: 'NE', name: 'Nebraska' },
+// Improved, more geographically accurate simplified paths
+// ViewBox: "0 0 760 480"
+const CONTEXT_STATES = [
+  // Montana
+  { id: 'MT', d: 'M 20 28 L 230 22 L 235 90 L 188 92 L 168 132 L 20 128 Z', lx: 120, ly: 76 },
+  // Wyoming
+  { id: 'WY', d: 'M 168 132 L 280 128 L 284 208 L 166 210 Z', lx: 224, ly: 168 },
+  // Colorado
+  { id: 'CO', d: 'M 166 210 L 284 208 L 288 284 L 168 282 Z', lx: 226, ly: 246 },
+  // Kansas
+  { id: 'KS', d: 'M 330 284 L 472 286 L 470 344 L 328 342 Z', lx: 400, ly: 314 },
+  // Missouri
+  { id: 'MO', d: 'M 472 232 L 560 234 L 564 296 L 548 318 L 524 332 L 470 344 L 472 286 Z', lx: 518, ly: 288 },
+  // Illinois
+  { id: 'IL', d: 'M 556 168 L 600 170 L 602 258 L 588 296 L 564 296 L 560 234 L 556 168 Z', lx: 578, ly: 228 },
+  // Michigan (upper portion)
+  { id: 'MI', d: 'M 598 82 L 660 78 L 666 148 L 618 162 L 600 170 L 598 82 Z', lx: 630, ly: 122 },
 ];
+
+const TERRITORY_STATES = [
+  // North Dakota
+  { id: 'ND', d: 'M 230 22 L 390 18 L 394 98 L 232 100 Z', lx: 312, ly: 58 },
+  // Minnesota — distinctive shape with NW corner notch
+  { id: 'MN', d: 'M 390 18 L 486 20 L 488 48 L 524 52 L 528 108 L 516 132 L 508 158 L 504 188 L 492 188 L 488 198 L 476 202 L 464 194 L 394 192 L 394 98 Z', lx: 452, ly: 108 },
+  // Wisconsin
+  { id: 'WI', d: 'M 508 158 L 516 132 L 528 108 L 540 112 L 564 106 L 600 128 L 602 170 L 600 170 L 556 168 L 542 180 L 528 188 L 516 192 L 504 188 Z', lx: 556, ly: 152 },
+  // South Dakota
+  { id: 'SD', d: 'M 232 100 L 394 98 L 394 192 L 464 194 L 462 210 L 234 208 Z', lx: 314, ly: 152 },
+  // Nebraska — with panhandle
+  { id: 'NE', d: 'M 168 210 L 234 208 L 462 210 L 464 194 L 476 202 L 480 226 L 472 244 L 472 286 L 328 284 L 326 268 L 166 266 Z', lx: 318, ly: 248 },
+  // Iowa
+  { id: 'IA', d: 'M 394 192 L 464 194 L 476 202 L 492 200 L 504 188 L 516 192 L 528 188 L 542 180 L 556 168 L 560 234 L 560 240 L 472 232 L 472 244 L 480 226 L 476 202 L 464 194 Z', lx: 470, ly: 216 },
+];
+
+function getRepForState(stateId: string) {
+  return REPS.find(r => r.states.includes(stateId));
+}
+
+function RepCard({ rep, active, onClick }: { rep: typeof REPS[0]; active: boolean; onClick: () => void }) {
+  return (
+    <div
+      onClick={onClick}
+      style={{
+        borderRadius: '6px',
+        border: `1px solid ${active ? rep.fill : 'oklch(88% 0.006 252)'}`,
+        backgroundColor: active ? 'oklch(97% 0.003 252)' : 'oklch(99% 0.002 252)',
+        padding: '1.25rem 1.5rem',
+        cursor: 'pointer',
+        transition: 'border-color 0.2s, background-color 0.2s, box-shadow 0.2s',
+        position: 'relative',
+        overflow: 'hidden',
+        boxShadow: active ? `0 0 20px ${rep.fill}30` : '0 1px 3px oklch(0% 0 0 / 0.05)',
+      }}
+    >
+      <div style={{ paddingLeft: '0' }}>
+        <div style={{ display: 'flex', gap: '0.375rem', marginBottom: '0.625rem', flexWrap: 'wrap' }}>
+          {rep.states.map(s => (
+            <span key={s} style={{
+              fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 900,
+              fontSize: '0.625rem', letterSpacing: '0.1em',
+              color: 'oklch(95% 0.01 252)',
+              backgroundColor: rep.fill, padding: '0.125rem 0.5rem', borderRadius: '2px',
+            }}>
+              {s}
+            </span>
+          ))}
+        </div>
+        <h3 style={{
+          fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 800,
+          fontSize: '1.05rem', letterSpacing: '-0.01em',
+          color: active ? 'oklch(12% 0.02 252)' : 'oklch(20% 0.02 252)',
+          marginBottom: '0.125rem', lineHeight: 1.1,
+        }}>
+          {rep.name}
+        </h3>
+        <p style={{
+          fontFamily: "'Chivo', sans-serif", fontSize: '0.8rem',
+          color: active ? rep.accentDark : 'oklch(50% 0.03 252)',
+          marginBottom: '0.75rem', fontWeight: 500,
+        }}>
+          {rep.title}
+        </p>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+          <a href={`tel:${rep.phone.replace(/\D/g, '')}`} onClick={e => e.stopPropagation()}
+            style={{ fontFamily: "'Chivo', sans-serif", fontSize: '0.8125rem',
+              color: active ? 'oklch(25% 0.04 252)' : 'oklch(45% 0.025 252)', textDecoration: 'none' }}>
+            {rep.phone}
+          </a>
+          <a href={`mailto:${rep.email}`} onClick={e => e.stopPropagation()}
+            style={{ fontFamily: "'Chivo', sans-serif", fontSize: '0.8125rem',
+              color: active ? 'oklch(25% 0.04 252)' : 'oklch(45% 0.025 252)', textDecoration: 'none' }}>
+            {rep.email}
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Territory() {
   const { ref, visible } = useFadeIn();
-  const [hovered, setHovered] = useState<string | null>(null);
+  const [activeRep, setActiveRep] = useState<string | null>(null);
+  const [hoveredState, setHoveredState] = useState<string | null>(null);
+  const cardRefs = useRef<Record<string, HTMLDivElement | null>>({});
+
+  function handleStateClick(stateId: string) {
+    const rep = getRepForState(stateId);
+    if (!rep) return;
+    const newActive = activeRep === rep.id ? null : rep.id;
+    setActiveRep(newActive);
+    if (newActive && cardRefs.current[rep.id]) {
+      cardRefs.current[rep.id]!.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
 
   return (
     <section
       id="territory"
       style={{
-        backgroundColor: 'oklch(95% 0.010 140)',
+        backgroundColor: 'oklch(97% 0.003 252)',
         padding: 'clamp(5rem, 10vw, 9rem) clamp(1.25rem, 4vw, 2.5rem)',
       }}
     >
-      <div
-        ref={ref}
-        style={{
-          maxWidth: '1320px',
-          margin: '0 auto',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: 'clamp(3rem, 6vw, 7rem)',
-          alignItems: 'center',
-        }}
-      >
-        {/* Left: Text */}
-        <div
-          style={{
-            opacity: visible ? 1 : 0,
-            transform: visible ? 'translateY(0)' : 'translateY(24px)',
-            transition: 'opacity 0.65s ease, transform 0.65s ease',
-          }}
-        >
-          <p
-            style={{
-              fontFamily: "'Big Shoulders Display', sans-serif",
-              fontWeight: 700,
-              fontSize: '0.6875rem',
-              letterSpacing: '0.13em',
-              textTransform: 'uppercase',
-              color: 'oklch(47% 0.112 140)',
-              marginBottom: '1rem',
-            }}
-          >
-            Our Territory
+      <div ref={ref} style={{ maxWidth: '1320px', margin: '0 auto' }}>
+
+        {/* Header */}
+        <div style={{
+          marginBottom: 'clamp(2.5rem, 5vw, 4rem)',
+          opacity: visible ? 1 : 0,
+          transform: visible ? 'translateY(0)' : 'translateY(24px)',
+          transition: 'opacity 0.65s ease, transform 0.65s ease',
+        }}>
+          <p style={{
+            fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 700,
+            fontSize: '0.6875rem', letterSpacing: '0.13em', textTransform: 'uppercase',
+            color: 'oklch(47% 0.075 252)', marginBottom: '1rem',
+          }}>
+            Our Coverage Area
           </p>
-
-          <h2
-            style={{
-              fontFamily: "'Big Shoulders Display', sans-serif",
-              fontWeight: 900,
-              fontSize: 'clamp(2.25rem, 5vw, 4.5rem)',
-              lineHeight: 0.97,
-              letterSpacing: '-0.02em',
-              color: 'oklch(15% 0.022 140)',
-              marginBottom: '1.5rem',
-            }}
-          >
-            THE UPPER
-            <br />
-            MIDWEST
-          </h2>
-
-          <p
-            style={{
-              fontFamily: "'Chivo', sans-serif",
-              fontSize: 'clamp(1rem, 1.4vw, 1.0625rem)',
-              lineHeight: 1.7,
-              color: 'oklch(44% 0.038 140)',
-              maxWidth: '52ch',
-              marginBottom: '2.5rem',
-            }}
-          >
-            ECS provides dedicated coverage across six states. Our team lives and
-            works in this territory, we know the distributors, the contractors,
-            and the specifying engineers by name.
-          </p>
-
-          {/* State list */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
-            {TERRITORY_LIST.map((state, i) => (
-              <div
-                key={state.abbr}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '1rem',
-                  padding: '0.75rem 0',
-                  borderTop: i === 0 ? '1px solid oklch(85% 0.014 140)' : 'none',
-                  borderBottom: '1px solid oklch(85% 0.014 140)',
-                  opacity: visible ? 1 : 0,
-                  transform: visible ? 'translateX(0)' : 'translateX(-12px)',
-                  transition: `opacity 0.45s ease ${0.1 + i * 0.07}s, transform 0.45s ease ${0.1 + i * 0.07}s`,
-                  cursor: 'default',
-                }}
-                onMouseEnter={() => setHovered(state.abbr)}
-                onMouseLeave={() => setHovered(null)}
-              >
-                <span
-                  style={{
-                    fontFamily: "'Big Shoulders Display', sans-serif",
-                    fontWeight: 900,
-                    fontSize: '1rem',
-                    color: hovered === state.abbr ? 'oklch(47% 0.112 140)' : 'oklch(39% 0.115 140)',
-                    width: '2.5rem',
-                    flexShrink: 0,
-                    transition: 'color 0.15s',
-                  }}
-                >
-                  {state.abbr}
-                </span>
-                <span
-                  style={{
-                    fontFamily: "'Chivo', sans-serif",
-                    fontSize: '0.9375rem',
-                    color: 'oklch(44% 0.038 140)',
-                  }}
-                >
-                  {state.name}
-                </span>
-                <span
-                  style={{
-                    marginLeft: 'auto',
-                    width: '6px',
-                    height: '6px',
-                    borderRadius: '50%',
-                    backgroundColor: hovered === state.abbr ? 'oklch(47% 0.112 140)' : 'oklch(85% 0.014 140)',
-                    transition: 'background-color 0.15s',
-                    flexShrink: 0,
-                  }}
-                />
-              </div>
-            ))}
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', alignItems: 'flex-end', justifyContent: 'space-between' }}>
+            <h2 style={{
+              fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 900,
+              fontSize: 'clamp(2.25rem, 5vw, 4.5rem)', lineHeight: 0.97,
+              letterSpacing: '-0.02em', color: 'oklch(15% 0.022 252)',
+            }}>
+              THE UPPER<br />MIDWEST
+            </h2>
+            <p style={{
+              fontFamily: "'Chivo', sans-serif", fontSize: '0.9375rem',
+              color: 'oklch(40% 0.02 252)', maxWidth: '48ch', lineHeight: 1.6,
+            }}>
+              Click any highlighted state to see who covers that territory, or select a rep card directly.
+            </p>
           </div>
         </div>
 
-        {/* Right: SVG Map */}
-        <div
-          style={{
-            opacity: visible ? 1 : 0,
-            transform: visible ? 'translateX(0)' : 'translateX(32px)',
-            transition: 'opacity 0.65s ease 0.2s, transform 0.65s ease 0.2s',
-          }}
+        {/* Map + Cards */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'minmax(0, 2fr) minmax(260px, 1fr)',
+          gap: 'clamp(2rem, 4vw, 3.5rem)',
+          alignItems: 'start',
+          opacity: visible ? 1 : 0,
+          transform: visible ? 'translateY(0)' : 'translateY(24px)',
+          transition: 'opacity 0.65s ease 0.15s, transform 0.65s ease 0.15s',
+        }}
+        className="territory-grid"
         >
-          <div
-            style={{
-              backgroundColor: 'oklch(98% 0.005 140)',
-              borderRadius: '4px',
-              padding: '2rem',
-              border: '1px solid oklch(88% 0.012 140)',
-            }}
-          >
+          {/* SVG Map */}
+          <div style={{
+            backgroundColor: 'oklch(10% 0.015 252)',
+            borderRadius: '8px',
+            padding: 'clamp(1rem, 2vw, 2rem)',
+            border: '1px solid oklch(20% 0.06 252)',
+            boxShadow: '0 4px 32px oklch(5% 0.01 252 / 0.5)',
+          }}>
             <svg
-              viewBox="30 10 610 310"
+              viewBox="0 0 700 380"
               style={{ width: '100%', height: 'auto', display: 'block' }}
-              aria-label="Map of ECS territory, Upper Midwest coverage"
+              aria-label="ECS territory coverage map"
             >
-              {/* Context states */}
-              {CONTEXT_STATES.map((s) => (
+              {/* Subtle grid background */}
+              <defs>
+                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="oklch(18% 0.04 252)" strokeWidth="0.5"/>
+                </pattern>
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                  <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+              <rect width="700" height="380" fill="url(#grid)" rx="4"/>
+
+              {/* Context states — muted */}
+              {CONTEXT_STATES.map(s => (
                 <g key={s.id}>
-                  <path
-                    d={s.d}
-                    fill="oklch(92% 0.012 140)"
-                    stroke="oklch(98% 0.005 140)"
-                    strokeWidth="2"
-                  />
-                  <text
-                    x={s.lx}
-                    y={s.ly}
-                    textAnchor="middle"
-                    dominantBaseline="middle"
-                    style={{
-                      fontFamily: "'Big Shoulders Display', sans-serif",
-                      fontWeight: 700,
-                      fontSize: '10px',
-                      fill: 'oklch(70% 0.025 140)',
-                      userSelect: 'none',
-                    }}
-                  >
-                    {s.label}
+                  <path d={s.d} fill="oklch(20% 0.04 252)" stroke="oklch(28% 0.06 252)" strokeWidth="1.5" strokeLinejoin="round"/>
+                  <text x={s.lx} y={s.ly} textAnchor="middle" dominantBaseline="middle"
+                    style={{ fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 700, fontSize: '8px', fill: 'oklch(38% 0.05 252)', userSelect: 'none' }}>
+                    {s.id}
                   </text>
                 </g>
               ))}
 
-              {/* Territory states */}
-              {TERRITORY_STATES.map((s) => (
-                <g key={s.id}>
-                  <path
-                    d={s.d}
-                    fill={hovered === s.id ? 'oklch(40% 0.115 140)' : 'oklch(33% 0.118 140)'}
-                    stroke="oklch(98% 0.005 140)"
-                    strokeWidth="2"
-                    style={{ transition: 'fill 0.2s', cursor: 'default' }}
-                    onMouseEnter={() => setHovered(s.id)}
-                    onMouseLeave={() => setHovered(null)}
-                  />
-                  <text
-                    x={s.lx}
-                    y={s.ly - 6}
-                    textAnchor="middle"
-                    dominantBaseline="middle"
-                    style={{
-                      fontFamily: "'Big Shoulders Display', sans-serif",
-                      fontWeight: 900,
-                      fontSize: '11px',
-                      fill: 'oklch(84% 0.05 140)',
-                      userSelect: 'none',
-                      pointerEvents: 'none',
-                    }}
+              {/* Territory states — vivid + interactive */}
+              {TERRITORY_STATES.map(s => {
+                const rep = getRepForState(s.id);
+                const isRepActive = activeRep === rep?.id;
+                const isHovered = hoveredState === s.id;
+                const fillColor = rep
+                  ? (isRepActive || isHovered ? rep.fillActive : rep.fill)
+                  : 'oklch(33% 0.10 252)';
+                return (
+                  <g
+                    key={s.id}
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => handleStateClick(s.id)}
+                    onMouseEnter={() => setHoveredState(s.id)}
+                    onMouseLeave={() => setHoveredState(null)}
+                    filter={isRepActive ? 'url(#glow)' : undefined}
                   >
-                    {s.label}
-                  </text>
-                  <text
-                    x={s.lx}
-                    y={s.ly + 8}
-                    textAnchor="middle"
-                    dominantBaseline="middle"
-                    style={{
-                      fontFamily: "'Chivo', sans-serif",
-                      fontWeight: 400,
-                      fontSize: '7px',
-                      fill: 'oklch(62% 0.1 140)',
-                      userSelect: 'none',
-                      pointerEvents: 'none',
-                    }}
-                  >
-                    {s.name}
-                  </text>
-                </g>
-              ))}
+                    <path
+                      d={s.d}
+                      fill={fillColor}
+                      stroke="oklch(10% 0.015 252)"
+                      strokeWidth="2"
+                      strokeLinejoin="round"
+                      style={{ transition: 'fill 0.2s' }}
+                    />
+                    <text x={s.lx} y={s.ly - 5} textAnchor="middle" dominantBaseline="middle"
+                      style={{ fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 900, fontSize: '12px', fill: 'oklch(95% 0.01 252)', userSelect: 'none', pointerEvents: 'none' }}>
+                      {s.id}
+                    </text>
+                    {rep && (
+                      <text x={s.lx} y={s.ly + 10} textAnchor="middle" dominantBaseline="middle"
+                        style={{ fontFamily: "'Chivo', sans-serif", fontSize: '8px', fill: 'oklch(85% 0.05 252)', userSelect: 'none', pointerEvents: 'none', opacity: 0.85 }}>
+                        {rep.name === 'Team Member' ? 'TBD' : rep.name.split(' ')[0]}
+                      </text>
+                    )}
+                  </g>
+                );
+              })}
             </svg>
 
-            <p
-              style={{
-                fontFamily: "'Chivo', sans-serif",
-                fontSize: '0.75rem',
-                color: 'oklch(60% 0.022 140)',
-                textAlign: 'center',
-                marginTop: '1rem',
-                fontStyle: 'italic',
-              }}
-            >
-              Tap or hover to highlight coverage areas
+            {/* Legend */}
+            <div style={{
+              display: 'flex', flexWrap: 'wrap', gap: '0.75rem 1.5rem',
+              marginTop: '1.25rem', paddingTop: '1rem',
+              borderTop: '1px solid oklch(20% 0.06 252)',
+              justifyContent: 'center',
+            }}>
+              {REPS.map(rep => (
+                <div
+                  key={rep.id}
+                  style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}
+                  onClick={() => setActiveRep(activeRep === rep.id ? null : rep.id)}
+                >
+                  <div style={{ width: '12px', height: '12px', borderRadius: '2px', backgroundColor: rep.fill, flexShrink: 0 }} />
+                  <span style={{ fontFamily: "'Chivo', sans-serif", fontSize: '0.6875rem', color: 'oklch(45% 0.025 252)' }}>
+                    {rep.name === 'Team Member' ? 'TBD' : rep.name.split(' ')[0]} — {rep.states.join(', ')}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Rep cards */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            <p style={{
+              fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 700,
+              fontSize: '0.6875rem', letterSpacing: '0.13em', textTransform: 'uppercase',
+              color: 'oklch(40% 0.04 252)', marginBottom: '0.5rem',
+            }}>
+              Territory Contacts
             </p>
+            {REPS.map(rep => (
+              <div key={rep.id} ref={el => { cardRefs.current[rep.id] = el; }}>
+                <RepCard rep={rep} active={activeRep === rep.id} onClick={() => setActiveRep(activeRep === rep.id ? null : rep.id)} />
+              </div>
+            ))}
           </div>
         </div>
       </div>

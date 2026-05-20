@@ -18,7 +18,7 @@ export default function Hero() {
       style={{
         position: 'relative',
         minHeight: '100dvh',
-        backgroundColor: 'oklch(27% 0.112 140)',
+        backgroundColor: 'oklch(27% 0.112 252)',
         overflow: 'hidden',
         display: 'flex',
         flexDirection: 'column',
@@ -38,7 +38,7 @@ export default function Hero() {
           fontSize: 'clamp(10rem, 28vw, 32rem)',
           lineHeight: 1,
           letterSpacing: '-0.05em',
-          color: 'oklch(33% 0.118 140)',
+          color: 'oklch(33% 0.118 252)',
           userSelect: 'none',
           pointerEvents: 'none',
           whiteSpace: 'nowrap',
@@ -55,7 +55,7 @@ export default function Hero() {
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'radial-gradient(ellipse 80% 60% at 20% 60%, oklch(22% 0.1 140) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse 80% 60% at 20% 60%, oklch(22% 0.1 252) 0%, transparent 70%)',
           pointerEvents: 'none',
         }}
       />
@@ -69,7 +69,7 @@ export default function Hero() {
           left: 0,
           right: 0,
           height: '30%',
-          background: 'linear-gradient(to top, oklch(27% 0.112 140) 0%, transparent 100%)',
+          background: 'linear-gradient(to top, oklch(27% 0.112 252) 0%, transparent 100%)',
           pointerEvents: 'none',
         }}
       />
@@ -93,7 +93,7 @@ export default function Hero() {
             fontSize: '0.6875rem',
             letterSpacing: '0.14em',
             textTransform: 'uppercase',
-            color: 'oklch(62% 0.1 140)',
+            color: 'oklch(62% 0.055 252)',
             marginBottom: '1.5rem',
             opacity: loaded ? 1 : 0,
             transform: loaded ? 'translateY(0)' : 'translateY(12px)',
@@ -109,7 +109,7 @@ export default function Hero() {
           style={{
             width: '64px',
             height: '2px',
-            backgroundColor: 'oklch(47% 0.112 140)',
+            backgroundColor: 'oklch(47% 0.112 252)',
             marginBottom: '1.75rem',
             transformOrigin: 'left',
             transform: loaded ? 'scaleX(1)' : 'scaleX(0)',
@@ -125,7 +125,7 @@ export default function Hero() {
             fontSize: 'clamp(3.5rem, 10vw, 10.5rem)',
             lineHeight: 0.92,
             letterSpacing: '-0.025em',
-            color: 'oklch(99.5% 0.003 140)',
+            color: 'oklch(99.5% 0.003 252)',
             marginBottom: 'clamp(1.5rem, 3vw, 2.5rem)',
             maxWidth: '16ch',
             opacity: loaded ? 1 : 0,
@@ -135,10 +135,28 @@ export default function Hero() {
         >
           INDUSTRY
           <br />
-          <span style={{ color: 'oklch(72% 0.085 140)' }}>LEADING</span>
+          <span style={{ color: 'oklch(72% 0.085 252)' }}>LEADING</span>
           <br />
           SOLUTIONS
         </h1>
+
+        {/* Tagline */}
+        <p
+          style={{
+            fontFamily: "'Big Shoulders Display', sans-serif",
+            fontWeight: 700,
+            fontSize: 'clamp(1.1rem, 2.2vw, 1.6rem)',
+            letterSpacing: '0.04em',
+            textTransform: 'uppercase',
+            color: 'oklch(72% 0.085 252)',
+            marginBottom: 'clamp(1.25rem, 2.5vw, 2rem)',
+            opacity: loaded ? 1 : 0,
+            transform: loaded ? 'translateY(0)' : 'translateY(12px)',
+            transition: 'opacity 0.7s ease 0.35s, transform 0.7s ease 0.35s',
+          }}
+        >
+          Connecting Manufacturers to Markets
+        </p>
 
         {/* Sub copy */}
         <p
@@ -146,7 +164,7 @@ export default function Hero() {
             fontFamily: "'Chivo', sans-serif",
             fontSize: 'clamp(1rem, 1.6vw, 1.125rem)',
             lineHeight: 1.7,
-            color: 'oklch(62% 0.1 140)',
+            color: 'oklch(62% 0.055 252)',
             maxWidth: '52ch',
             marginBottom: 'clamp(2rem, 4vw, 3rem)',
             opacity: loaded ? 1 : 0,
@@ -179,24 +197,24 @@ export default function Hero() {
               fontSize: '0.875rem',
               letterSpacing: '0.08em',
               textTransform: 'uppercase',
-              color: 'oklch(22% 0.095 140)',
-              backgroundColor: 'oklch(72% 0.085 140)',
+              color: 'oklch(22% 0.095 252)',
+              backgroundColor: 'oklch(72% 0.085 252)',
               padding: '0.875rem 2rem',
               borderRadius: '3px',
               textDecoration: 'none',
               display: 'inline-block',
-              boxShadow: '0 4px 20px oklch(22% 0.095 140 / 0.4)',
+              boxShadow: '0 4px 20px oklch(22% 0.095 252 / 0.4)',
               transition: 'background-color 0.2s, box-shadow 0.2s',
             }}
             onMouseEnter={(e) => {
               const el = e.currentTarget as HTMLElement;
-              el.style.backgroundColor = 'oklch(84% 0.05 140)';
-              el.style.boxShadow = '0 6px 28px oklch(22% 0.095 140 / 0.5)';
+              el.style.backgroundColor = 'oklch(84% 0.05 252)';
+              el.style.boxShadow = '0 6px 28px oklch(22% 0.095 252 / 0.5)';
             }}
             onMouseLeave={(e) => {
               const el = e.currentTarget as HTMLElement;
-              el.style.backgroundColor = 'oklch(72% 0.085 140)';
-              el.style.boxShadow = '0 4px 20px oklch(22% 0.095 140 / 0.4)';
+              el.style.backgroundColor = 'oklch(72% 0.085 252)';
+              el.style.boxShadow = '0 4px 20px oklch(22% 0.095 252 / 0.4)';
             }}
           >
             Our Line Card
@@ -210,8 +228,8 @@ export default function Hero() {
               fontSize: '0.875rem',
               letterSpacing: '0.08em',
               textTransform: 'uppercase',
-              color: 'oklch(84% 0.05 140)',
-              border: '1px solid oklch(39% 0.115 140)',
+              color: 'oklch(84% 0.05 252)',
+              border: '1px solid oklch(39% 0.065 252)',
               padding: '0.875rem 2rem',
               borderRadius: '3px',
               textDecoration: 'none',
@@ -220,13 +238,13 @@ export default function Hero() {
             }}
             onMouseEnter={(e) => {
               const el = e.currentTarget as HTMLElement;
-              el.style.borderColor = 'oklch(62% 0.1 140)';
-              el.style.color = 'oklch(99.5% 0.003 140)';
+              el.style.borderColor = 'oklch(62% 0.1 252)';
+              el.style.color = 'oklch(99.5% 0.003 252)';
             }}
             onMouseLeave={(e) => {
               const el = e.currentTarget as HTMLElement;
-              el.style.borderColor = 'oklch(39% 0.115 140)';
-              el.style.color = 'oklch(84% 0.05 140)';
+              el.style.borderColor = 'oklch(39% 0.065 252)';
+              el.style.color = 'oklch(84% 0.05 252)';
             }}
           >
             Meet the Team
@@ -240,12 +258,12 @@ export default function Hero() {
             display: 'flex',
             alignItems: 'center',
             gap: '0.75rem',
-            color: 'oklch(39% 0.115 140)',
+            color: 'oklch(39% 0.065 252)',
             opacity: loaded ? 1 : 0,
             transition: 'opacity 0.7s ease 0.8s',
           }}
         >
-          <div style={{ width: '1px', height: '44px', backgroundColor: 'oklch(39% 0.115 140)' }} />
+          <div style={{ width: '1px', height: '44px', backgroundColor: 'oklch(39% 0.065 252)' }} />
           <span
             style={{
               fontFamily: "'Big Shoulders Display', sans-serif",

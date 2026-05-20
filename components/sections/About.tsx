@@ -33,7 +33,7 @@ export default function About() {
     <section
       id="about"
       style={{
-        backgroundColor: 'oklch(98% 0.005 140)',
+        backgroundColor: 'oklch(98% 0.005 252)',
         padding: 'clamp(5rem, 10vw, 9rem) clamp(1.25rem, 4vw, 2.5rem)',
       }}
     >
@@ -69,7 +69,7 @@ export default function About() {
                 fontSize: '0.6875rem',
                 letterSpacing: '0.13em',
                 textTransform: 'uppercase',
-                color: 'oklch(47% 0.112 140)',
+                color: 'oklch(47% 0.075 252)',
                 marginBottom: '1.5rem',
               }}
             >
@@ -83,7 +83,7 @@ export default function About() {
                 fontSize: 'clamp(1.75rem, 4vw, 3.5rem)',
                 lineHeight: 1.03,
                 letterSpacing: '-0.018em',
-                color: 'oklch(27% 0.112 140)',
+                color: 'oklch(27% 0.08 252)',
                 margin: 0,
                 marginBottom: '1.75rem',
               }}
@@ -97,7 +97,7 @@ export default function About() {
                 fontSize: '0.8125rem',
                 fontWeight: 600,
                 letterSpacing: '0.03em',
-                color: 'oklch(47% 0.112 140)',
+                color: 'oklch(47% 0.075 252)',
                 textTransform: 'uppercase',
               }}
             >
@@ -108,7 +108,7 @@ export default function About() {
               style={{
                 width: '40px',
                 height: '3px',
-                backgroundColor: 'oklch(47% 0.112 140)',
+                backgroundColor: 'oklch(47% 0.075 252)',
                 marginTop: '1.25rem',
                 marginBottom: '1.5rem',
               }}
@@ -125,11 +125,11 @@ export default function About() {
                     fontSize: '0.6875rem',
                     letterSpacing: '0.1em',
                     textTransform: 'uppercase',
-                    color: 'oklch(47% 0.112 140)',
-                    border: '1px solid oklch(85% 0.014 140)',
+                    color: 'oklch(47% 0.075 252)',
+                    border: '1px solid oklch(85% 0.014 252)',
                     padding: '0.375rem 0.875rem',
                     borderRadius: '2px',
-                    backgroundColor: 'oklch(97% 0.012 140)',
+                    backgroundColor: 'oklch(97% 0.012 252)',
                   }}
                 >
                   {badge}
@@ -152,7 +152,7 @@ export default function About() {
                 fontFamily: "'Chivo', sans-serif",
                 fontSize: 'clamp(1rem, 1.4vw, 1.125rem)',
                 lineHeight: 1.75,
-                color: 'oklch(15% 0.022 140)',
+                color: 'oklch(15% 0.022 252)',
                 marginBottom: '1.5rem',
                 maxWidth: '62ch',
               }}
@@ -168,7 +168,7 @@ export default function About() {
                 fontFamily: "'Chivo', sans-serif",
                 fontSize: 'clamp(1rem, 1.4vw, 1.125rem)',
                 lineHeight: 1.75,
-                color: 'oklch(44% 0.038 140)',
+                color: 'oklch(44% 0.022 252)',
                 marginBottom: '1.5rem',
                 maxWidth: '62ch',
               }}
@@ -184,12 +184,12 @@ export default function About() {
                 fontFamily: "'Chivo', sans-serif",
                 fontSize: 'clamp(1rem, 1.4vw, 1.125rem)',
                 lineHeight: 1.75,
-                color: 'oklch(44% 0.038 140)',
+                color: 'oklch(44% 0.022 252)',
                 maxWidth: '62ch',
               }}
             >
               Today, ECS is a recognized leader in all three groups, and offers our principals
-              a unique advantage: <strong style={{ color: 'oklch(27% 0.112 140)', fontWeight: 600 }}>multiple specialized sales channels within a single trade area</strong>.
+              a unique advantage: <strong style={{ color: 'oklch(27% 0.08 252)', fontWeight: 600 }}>multiple specialized sales channels within a single trade area</strong>.
               Something the typical single-market rep simply cannot provide.
             </p>
           </div>
@@ -202,7 +202,7 @@ export default function About() {
             opacity: timeline.visible ? 1 : 0,
             transform: timeline.visible ? 'translateY(0)' : 'translateY(24px)',
             transition: `opacity 0.65s ease ${timeline.delay}s, transform 0.65s ease ${timeline.delay}s`,
-            borderTop: '1px solid oklch(85% 0.014 140)',
+            borderTop: '1px solid oklch(85% 0.014 252)',
             paddingTop: 'clamp(2.5rem, 5vw, 4rem)',
           }}
         >
@@ -213,7 +213,7 @@ export default function About() {
               fontSize: '0.6875rem',
               letterSpacing: '0.13em',
               textTransform: 'uppercase',
-              color: 'oklch(60% 0.022 140)',
+              color: 'oklch(60% 0.022 252)',
               marginBottom: '2rem',
             }}
           >
@@ -234,7 +234,7 @@ export default function About() {
                   padding: '1.25rem 1.5rem 1.25rem 0',
                   paddingRight: i < TIMELINE.length - 1 ? '1.5rem' : '0',
                   marginRight: i < TIMELINE.length - 1 ? '1.5rem' : '0',
-                  borderRight: i < TIMELINE.length - 1 ? '1px solid oklch(85% 0.014 140)' : 'none',
+                  borderRight: i < TIMELINE.length - 1 ? '1px solid oklch(85% 0.014 252)' : 'none',
                   opacity: timeline.visible ? 1 : 0,
                   transform: timeline.visible ? 'translateY(0)' : 'translateY(12px)',
                   transition: `opacity 0.5s ease ${0.1 + i * 0.08}s, transform 0.5s ease ${0.1 + i * 0.08}s`,
@@ -245,7 +245,7 @@ export default function About() {
                     fontFamily: "'Big Shoulders Display', sans-serif",
                     fontWeight: 900,
                     fontSize: '1.75rem',
-                    color: i === TIMELINE.length - 1 ? 'oklch(47% 0.112 140)' : 'oklch(27% 0.112 140)',
+                    color: i === TIMELINE.length - 1 ? 'oklch(47% 0.075 252)' : 'oklch(27% 0.08 252)',
                     lineHeight: 1,
                     letterSpacing: '-0.02em',
                     marginBottom: '0.5rem',
@@ -258,7 +258,7 @@ export default function About() {
                     fontFamily: "'Chivo', sans-serif",
                     fontSize: '0.8125rem',
                     lineHeight: 1.5,
-                    color: 'oklch(44% 0.038 140)',
+                    color: 'oklch(44% 0.022 252)',
                   }}
                 >
                   {item.event}
@@ -268,36 +268,6 @@ export default function About() {
           </div>
         </div>
 
-        {/* Image strip */}
-        <div
-          className="about-images"
-          style={{
-            marginTop: 'clamp(4rem, 7vw, 7rem)',
-            height: 'clamp(180px, 24vw, 340px)',
-          }}
-        >
-          {[
-            { src: 'https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?w=1200&q=75', alt: 'Electrical panel installation' },
-            { src: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=75', alt: 'Industrial facility' },
-            { src: 'https://images.unsplash.com/photo-1581093458791-9f3c3250a8b0?w=600&q=75', alt: 'Circuit board technology' },
-          ].map((img, i) => (
-            <div
-              key={i}
-              style={{
-                overflow: 'hidden',
-                borderRadius: '3px',
-                backgroundColor: 'oklch(92% 0.025 140)',
-              }}
-            >
-              <img
-                src={img.src}
-                alt={img.alt}
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                loading="lazy"
-              />
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );

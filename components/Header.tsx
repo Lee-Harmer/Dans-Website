@@ -7,11 +7,10 @@ import { usePathname } from 'next/navigation';
 
 const NAV_LINKS = [
   { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
-  { label: 'What We Do', href: '/what-we-do' },
+  { label: 'Our Values', href: '/values' },
+  { label: 'Industries', href: '/industries' },
   { label: 'Manufacturers', href: '/manufacturers' },
-  { label: 'Territory', href: '/territory' },
-  { label: 'Team', href: '/team' },
+  { label: 'Our Territory', href: '/team' },
 ];
 
 export default function Header() {
@@ -39,8 +38,8 @@ export default function Header() {
           right: 0,
           zIndex: 50,
           transition: 'background-color 0.3s ease, box-shadow 0.3s ease',
-          backgroundColor: opaque ? 'oklch(99.5% 0.003 140)' : 'transparent',
-          boxShadow: opaque ? '0 1px 0 oklch(85% 0.014 140)' : 'none',
+          backgroundColor: 'oklch(22% 0.10 252)',
+          boxShadow: '0 1px 0 oklch(30% 0.10 252)',
         }}
       >
         <div
@@ -61,7 +60,7 @@ export default function Header() {
             style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}
           >
             <Image
-              src="/logo.png"
+              src="/Dans-Website/logo-white.png"
               alt="Electric Component Sales"
               width={180}
               height={50}
@@ -90,11 +89,7 @@ export default function Header() {
                     fontSize: '0.875rem',
                     letterSpacing: '0.06em',
                     textTransform: 'uppercase',
-                    color: active
-                      ? 'oklch(27% 0.112 140)'
-                      : opaque
-                        ? 'oklch(44% 0.038 140)'
-                        : 'oklch(84% 0.05 140)',
+                    color: active ? 'oklch(84% 0.05 252)' : 'oklch(72% 0.085 252)',
                     padding: '0.5rem 0.875rem',
                     borderRadius: '4px',
                     textDecoration: 'none',
@@ -112,7 +107,7 @@ export default function Header() {
                         left: '0.875rem',
                         right: '0.875rem',
                         height: '2px',
-                        backgroundColor: 'oklch(47% 0.112 140)',
+                        backgroundColor: 'oklch(84% 0.05 252)',
                         borderRadius: '1px',
                       }}
                     />
@@ -129,8 +124,8 @@ export default function Header() {
                 fontSize: '0.875rem',
                 letterSpacing: '0.08em',
                 textTransform: 'uppercase',
-                color: 'oklch(99.5% 0.003 140)',
-                backgroundColor: pathname === '/contact' ? 'oklch(33% 0.118 140)' : 'oklch(27% 0.112 140)',
+                color: 'oklch(99.5% 0.003 252)',
+                backgroundColor: pathname === '/contact' ? 'oklch(50% 0.12 252)' : 'oklch(42% 0.12 252)',
                 padding: '0.625rem 1.25rem',
                 borderRadius: '4px',
                 textDecoration: 'none',
@@ -138,11 +133,11 @@ export default function Header() {
                 transition: 'background-color 0.2s',
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.backgroundColor = 'oklch(33% 0.118 140)';
+                (e.currentTarget as HTMLElement).style.backgroundColor = 'oklch(50% 0.12 252)';
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLElement).style.backgroundColor =
-                  pathname === '/contact' ? 'oklch(33% 0.118 140)' : 'oklch(27% 0.112 140)';
+                  pathname === '/contact' ? 'oklch(50% 0.12 252)' : 'oklch(42% 0.12 252)';
               }}
             >
               Get In Touch
@@ -170,7 +165,7 @@ export default function Header() {
                   display: 'block',
                   width: '22px',
                   height: '2px',
-                  backgroundColor: opaque ? 'oklch(27% 0.112 140)' : 'oklch(99.5% 0.003 140)',
+                  backgroundColor: 'oklch(84% 0.05 252)',
                   borderRadius: '1px',
                   transition: 'transform 0.2s, opacity 0.2s',
                   transform: menuOpen
@@ -196,7 +191,7 @@ export default function Header() {
             right: 0,
             bottom: 0,
             zIndex: 40,
-            backgroundColor: 'oklch(27% 0.112 140)',
+            backgroundColor: 'oklch(27% 0.112 252)',
             display: 'flex',
             flexDirection: 'column',
             padding: '2rem clamp(1.25rem, 4vw, 2.5rem)',
@@ -214,7 +209,7 @@ export default function Header() {
                 fontWeight: 800,
                 fontSize: '2rem',
                 letterSpacing: '-0.01em',
-                color: pathname === link.href ? 'oklch(72% 0.085 140)' : 'oklch(92% 0.025 140)',
+                color: pathname === link.href ? 'oklch(72% 0.085 252)' : 'oklch(92% 0.025 252)',
                 textDecoration: 'none',
                 padding: '0.75rem 0',
               }}
@@ -229,7 +224,7 @@ export default function Header() {
               fontFamily: "'Big Shoulders Display', sans-serif",
               fontWeight: 900,
               fontSize: '2rem',
-              color: 'oklch(72% 0.085 140)',
+              color: 'oklch(72% 0.085 252)',
               textDecoration: 'none',
               padding: '0.75rem 0',
               marginTop: '1rem',
