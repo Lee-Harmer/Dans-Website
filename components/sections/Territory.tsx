@@ -98,7 +98,7 @@ const TERRITORY_STATES = [
   // Nebraska — with panhandle
   { id: 'NE', d: 'M 168 210 L 234 208 L 462 210 L 464 194 L 476 202 L 480 226 L 472 244 L 472 286 L 328 284 L 326 268 L 166 266 Z', lx: 318, ly: 248 },
   // Iowa
-  { id: 'IA', d: 'M 394 192 L 464 194 L 476 202 L 492 200 L 504 188 L 516 192 L 528 188 L 542 180 L 556 168 L 560 234 L 560 240 L 472 232 L 472 244 L 480 226 L 476 202 L 464 194 Z', lx: 470, ly: 216 },
+  { id: 'IA', d: 'M 394 192 L 464 194 L 476 202 L 492 200 L 504 188 L 516 192 L 528 188 L 542 180 L 556 168 L 560 234 L 560 240 L 472 232 L 472 244 L 480 226 L 476 202 L 464 194 Z', lx: 522, ly: 208 },
 ];
 
 function getRepForState(stateId: string) {
@@ -237,11 +237,11 @@ export default function Territory() {
         >
           {/* SVG Map */}
           <div style={{
-            backgroundColor: 'oklch(10% 0.015 252)',
+            backgroundColor: 'oklch(99% 0.003 252)',
             borderRadius: '8px',
             padding: 'clamp(1rem, 2vw, 2rem)',
-            border: '1px solid oklch(20% 0.06 252)',
-            boxShadow: '0 4px 32px oklch(5% 0.01 252 / 0.5)',
+            border: '1px solid oklch(88% 0.010 252)',
+            boxShadow: '0 2px 16px oklch(60% 0.04 252 / 0.12)',
           }}>
             <svg
               viewBox="0 0 700 380"
@@ -251,7 +251,8 @@ export default function Territory() {
               {/* Subtle grid background */}
               <defs>
                 <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="oklch(18% 0.04 252)" strokeWidth="0.5"/>
+                  <rect width="40" height="40" fill="oklch(99% 0.003 252)"/>
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="oklch(90% 0.010 252)" strokeWidth="0.5"/>
                 </pattern>
                 <filter id="glow">
                   <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
@@ -263,9 +264,9 @@ export default function Territory() {
               {/* Context states — muted */}
               {CONTEXT_STATES.map(s => (
                 <g key={s.id}>
-                  <path d={s.d} fill="oklch(20% 0.04 252)" stroke="oklch(28% 0.06 252)" strokeWidth="1.5" strokeLinejoin="round"/>
+                  <path d={s.d} fill="oklch(90% 0.010 252)" stroke="oklch(78% 0.012 252)" strokeWidth="1.5" strokeLinejoin="round"/>
                   <text x={s.lx} y={s.ly} textAnchor="middle" dominantBaseline="middle"
-                    style={{ fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 700, fontSize: '8px', fill: 'oklch(38% 0.05 252)', userSelect: 'none' }}>
+                    style={{ fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 700, fontSize: '8px', fill: 'oklch(55% 0.025 252)', userSelect: 'none' }}>
                     {s.id}
                   </text>
                 </g>
@@ -291,7 +292,7 @@ export default function Territory() {
                     <path
                       d={s.d}
                       fill={fillColor}
-                      stroke="oklch(10% 0.015 252)"
+                      stroke="oklch(99% 0.003 252)"
                       strokeWidth="2"
                       strokeLinejoin="round"
                       style={{ transition: 'fill 0.2s' }}
@@ -315,7 +316,7 @@ export default function Territory() {
             <div style={{
               display: 'flex', flexWrap: 'wrap', gap: '0.75rem 1.5rem',
               marginTop: '1.25rem', paddingTop: '1rem',
-              borderTop: '1px solid oklch(20% 0.06 252)',
+              borderTop: '1px solid oklch(88% 0.010 252)',
               justifyContent: 'center',
             }}>
               {REPS.map(rep => (
@@ -325,7 +326,7 @@ export default function Territory() {
                   onClick={() => setActiveRep(activeRep === rep.id ? null : rep.id)}
                 >
                   <div style={{ width: '12px', height: '12px', borderRadius: '2px', backgroundColor: rep.fill, flexShrink: 0 }} />
-                  <span style={{ fontFamily: "'Chivo', sans-serif", fontSize: '0.6875rem', color: 'oklch(45% 0.025 252)' }}>
+                  <span style={{ fontFamily: "'Chivo', sans-serif", fontSize: '0.6875rem', color: 'oklch(40% 0.025 252)' }}>
                     {rep.name === 'Team Member' ? 'TBD' : rep.name.split(' ')[0]} — {rep.states.join(', ')}
                   </span>
                 </div>

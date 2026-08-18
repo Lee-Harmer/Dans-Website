@@ -188,7 +188,7 @@ h1, h2, h3, h4, h5 {
   gap: 0.5rem;
   align-items: start;
   padding: 1.25rem 1rem;
-  border-bottom: 1px solid oklch(22% 0.095 252);
+  border-bottom: 1px solid oklch(30% 0.09 252);
   transition: background-color 0.15s ease;
   cursor: default;
 }
@@ -257,7 +257,7 @@ h1, h2, h3, h4, h5 {
 @media (max-width: 599px) {
   .stats-grid > div {
     border-right: none !important;
-    border-bottom: 1px solid oklch(22% 0.095 252);
+    border-bottom: 1px solid oklch(30% 0.09 252);
   }
   .stats-grid > div:last-child {
     border-bottom: none;

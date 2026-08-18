@@ -383,7 +383,7 @@ export default function IndustriesServed() {
 
       {/* ── Industry cards ───────────────────────────────────────────────── */}
       <section style={{
-        backgroundColor: 'oklch(12% 0.018 252)',
+        backgroundColor: 'oklch(21% 0.09 252)',
         padding: 'clamp(5rem, 10vw, 9rem) clamp(1.25rem, 4vw, 2.5rem)',
       }}>
         <div ref={cardsSection.ref} style={{ maxWidth: '1320px', margin: '0 auto' }}>
@@ -400,7 +400,7 @@ export default function IndustriesServed() {
               <p style={{
                 fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 700,
                 fontSize: '0.6875rem', letterSpacing: '0.13em', textTransform: 'uppercase',
-                color: 'oklch(47% 0.075 252)', marginBottom: '1rem',
+                color: 'oklch(62% 0.075 252)', marginBottom: '1rem',
               }}>
                 Markets We Serve
               </p>
@@ -418,7 +418,7 @@ export default function IndustriesServed() {
               <p style={{
                 fontFamily: "'Chivo', sans-serif",
                 fontSize: 'clamp(1rem, 1.4vw, 1.0625rem)',
-                lineHeight: 1.7, color: 'oklch(55% 0.05 252)', maxWidth: '48ch',
+                lineHeight: 1.7, color: 'oklch(68% 0.05 252)', maxWidth: '48ch',
               }}>
                 Hover over an industry to see how ECS adds value in that market.
               </p>

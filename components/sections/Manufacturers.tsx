@@ -104,13 +104,13 @@ const MANUFACTURERS = [
     productImage: '/Dans-Website/manufacturers/omnion-product.png',
   },
   {
-    name: 'American Electrical',
+    name: 'HellermannTyton',
     category: 'Electrical',
-    desc: 'Complete line of DIN Rail mounted components, terminal blocks, power supplies, fuse holders, circuit breakers, interface modules, disconnect switches, PCB terminals, wire ferrules, and tools.',
-    markets: ['Industrial', 'OEM', 'Commercial'],
-    website: 'https://placeholder.com',
-    logo: '/Dans-Website/manufacturers/american-electrical-logo.png',
-    productImage: '/Dans-Website/manufacturers/american-electrical-product.png',
+    desc: 'Global leader in cable management systems and identification solutions for electrical installations. Products span wire connectors, cable ties, conduit fittings, labels, and tools for professional electrical work.',
+    markets: ['Industrial', 'Commercial', 'OEM'],
+    website: 'https://www.hellermanntyton.com',
+    logo: '/Dans-Website/manufacturers/hellermann-logo-v2.png',
+    productImage: '/Dans-Website/manufacturers/hellermann-product.png',
   },
   {
     name: 'Klein Tools',
@@ -120,15 +120,6 @@ const MANUFACTURERS = [
     website: 'https://www.kleintools.com',
     logo: '/Dans-Website/manufacturers/klein-logo.png',
     productImage: '/Dans-Website/manufacturers/klein-product.png',
-  },
-  {
-    name: 'Industrial Power Cable',
-    category: 'Electrical',
-    desc: 'Industrial portable power cables, flexible cordage, welding cable, stage lighting, underground service entrance, submersible pump, mining, and high-voltage cables.',
-    markets: ['Industrial', 'Mining', 'Commercial'],
-    website: 'https://placeholder.com',
-    logo: null,
-    productImage: null,
   },
 ];
 

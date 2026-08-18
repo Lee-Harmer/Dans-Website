@@ -44,6 +44,8 @@ const labelStyle: React.CSSProperties = {
 export default function Contact() {
   const { ref, visible } = useFadeIn();
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [formError, setFormError] = useState(false);
   const [form, setForm] = useState({
     name: '',
     company: '',
@@ -53,10 +55,27 @@ export default function Contact() {
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    /* TODO: Wire to Formspree, Netlify Forms, or server action */
-    setSubmitted(true);
+    setSubmitting(true);
+    setFormError(false);
+    try {
+      // Sign up at formspree.io → create a form pointing to info@ecs-sales.com → paste the ID below
+      const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        setFormError(true);
+      }
+    } catch {
+      setFormError(true);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -137,7 +156,7 @@ export default function Contact() {
           {/* Contact details */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             <div>
-              <p style={{ fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 700, fontSize: '0.6875rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'oklch(47% 0.075 252)', marginBottom: '0.25rem' }}>
+              <p style={{ fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 700, fontSize: '0.6875rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'oklch(62% 0.075 252)', marginBottom: '0.25rem' }}>
                 Technical &amp; Commercial
               </p>
               <a
@@ -159,32 +178,7 @@ export default function Contact() {
             </div>
 
             <div>
-              <p style={{ fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 700, fontSize: '0.6875rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'oklch(47% 0.075 252)', marginBottom: '0.25rem' }}>
-                Representation Inquiries
-              </p>
-              <p style={{ fontFamily: "'Chivo', sans-serif", fontSize: '0.9375rem', color: 'oklch(84% 0.05 252)', fontWeight: 500, marginBottom: '0.125rem' }}>
-                David Gartner
-              </p>
-              <a
-                href="tel:9529147201"
-                style={{ fontFamily: "'Chivo', sans-serif", fontSize: '0.9375rem', color: 'oklch(62% 0.1 252)', textDecoration: 'none', display: 'block', marginBottom: '0.125rem', transition: 'color 0.15s' }}
-                onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = 'oklch(84% 0.05 252)'}
-                onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = 'oklch(62% 0.1 252)'}
-              >
-                (952) 914-7201
-              </a>
-              <a
-                href="mailto:dgartner@ecs-sales.com"
-                style={{ fontFamily: "'Chivo', sans-serif", fontSize: '0.9375rem', color: 'oklch(62% 0.1 252)', textDecoration: 'none', transition: 'color 0.15s' }}
-                onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = 'oklch(84% 0.05 252)'}
-                onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = 'oklch(62% 0.1 252)'}
-              >
-                dgartner@ecs-sales.com
-              </a>
-            </div>
-
-            <div>
-              <p style={{ fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 700, fontSize: '0.6875rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'oklch(47% 0.075 252)', marginBottom: '0.25rem' }}>
+              <p style={{ fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 700, fontSize: '0.6875rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'oklch(62% 0.075 252)', marginBottom: '0.25rem' }}>
                 Office
               </p>
               <address
@@ -196,7 +190,7 @@ export default function Contact() {
             </div>
 
             <div>
-              <p style={{ fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 700, fontSize: '0.6875rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'oklch(47% 0.075 252)', marginBottom: '0.25rem' }}>
+              <p style={{ fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 700, fontSize: '0.6875rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'oklch(62% 0.075 252)', marginBottom: '0.25rem' }}>
                 Hours
               </p>
               <p style={{ fontFamily: "'Chivo', sans-serif", fontSize: '0.9375rem', color: 'oklch(62% 0.1 252)' }}>
@@ -304,8 +298,14 @@ export default function Contact() {
                 />
               </div>
 
+              {formError && (
+                <p style={{ fontFamily: "'Chivo', sans-serif", fontSize: '0.875rem', color: 'oklch(72% 0.18 25)' }}>
+                  Something went wrong. Please try again or email us directly at info@ecs-sales.com
+                </p>
+              )}
               <button
                 type="submit"
+                disabled={submitting}
                 style={{
                   fontFamily: "'Big Shoulders Display', sans-serif",
                   fontWeight: 800,
@@ -313,18 +313,19 @@ export default function Contact() {
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase',
                   color: 'oklch(27% 0.112 252)',
-                  backgroundColor: 'oklch(72% 0.085 252)',
+                  backgroundColor: submitting ? 'oklch(62% 0.06 252)' : 'oklch(72% 0.085 252)',
                   padding: '1rem 2rem',
                   borderRadius: '3px',
                   border: 'none',
-                  cursor: 'pointer',
+                  cursor: submitting ? 'not-allowed' : 'pointer',
                   transition: 'background-color 0.2s',
                   alignSelf: 'flex-start',
+                  opacity: submitting ? 0.7 : 1,
                 }}
-                onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.backgroundColor = 'oklch(84% 0.05 252)'}
-                onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.backgroundColor = 'oklch(72% 0.085 252)'}
+                onMouseEnter={(e) => { if (!submitting) (e.currentTarget as HTMLElement).style.backgroundColor = 'oklch(84% 0.05 252)'; }}
+                onMouseLeave={(e) => { if (!submitting) (e.currentTarget as HTMLElement).style.backgroundColor = 'oklch(72% 0.085 252)'; }}
               >
-                Send Message →
+                {submitting ? 'Sending…' : 'Send Message →'}
               </button>
             </form>
           )}

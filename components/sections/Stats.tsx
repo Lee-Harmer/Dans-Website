@@ -28,7 +28,7 @@ export default function Stats() {
 
   return (
     <section ref={ref} style={{
-      backgroundColor: 'oklch(10% 0.02 252)',
+      backgroundColor: 'oklch(20% 0.08 252)',
       padding: 'clamp(3rem, 5vw, 5rem) clamp(1.25rem, 4vw, 2.5rem)',
     }}>
       <div style={{
@@ -43,7 +43,7 @@ export default function Stats() {
             opacity: inView ? 1 : 0,
             transform: inView ? 'translateY(0)' : 'translateY(16px)',
             transition: `opacity 0.55s ease ${i * 0.1}s, transform 0.55s ease ${i * 0.1}s`,
-            borderRight: i < STATS.length - 1 ? '1px solid oklch(18% 0.05 252)' : 'none',
+            borderRight: i < STATS.length - 1 ? '1px solid oklch(30% 0.09 252)' : 'none',
           }}>
             <span style={{
               fontFamily: "'Big Shoulders Display', sans-serif",
@@ -58,7 +58,7 @@ export default function Stats() {
             <span style={{
               fontFamily: "'Big Shoulders Display', sans-serif",
               fontWeight: 700, fontSize: '0.9375rem',
-              color: 'oklch(80% 0.018 252)',
+              color: 'oklch(90% 0.018 252)',
               marginBottom: '0.375rem', lineHeight: 1.2,
             }}>
               {stat.label}
@@ -66,7 +66,7 @@ export default function Stats() {
             <span style={{
               fontFamily: "'Chivo', sans-serif",
               fontWeight: 400, fontSize: '0.75rem',
-              color: 'oklch(38% 0.06 252)', lineHeight: 1.4,
+              color: 'oklch(60% 0.06 252)', lineHeight: 1.4,
             }}>
               {stat.sub}
             </span>

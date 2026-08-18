@@ -96,10 +96,10 @@ function ValueCard({ value, index, visible }: { value: typeof VALUES[0]; index: 
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        backgroundColor: hovered ? 'oklch(22% 0.08 252)' : 'oklch(18% 0.06 252)',
+        backgroundColor: hovered ? 'oklch(30% 0.10 252)' : 'oklch(26% 0.09 252)',
         borderRadius: '6px',
         padding: 'clamp(1.75rem, 3vw, 2.5rem)',
-        border: `1px solid ${hovered ? 'oklch(47% 0.075 252)' : 'oklch(22% 0.07 252)'}`,
+        border: `1px solid ${hovered ? 'oklch(55% 0.085 252)' : 'oklch(34% 0.09 252)'}`,
         display: 'flex', flexDirection: 'column', gap: '1.25rem',
         opacity: visible ? 1 : 0,
         transform: visible ? 'translateY(0)' : 'translateY(20px)',
@@ -119,7 +119,7 @@ function ValueCard({ value, index, visible }: { value: typeof VALUES[0]; index: 
         </h3>
         <p style={{
           fontFamily: "'Chivo', sans-serif", fontSize: '0.9375rem',
-          lineHeight: 1.7, color: 'oklch(58% 0.05 252)',
+          lineHeight: 1.7, color: 'oklch(70% 0.05 252)',
         }}>
           {value.desc}
         </p>
@@ -289,7 +289,7 @@ export default function OurValues() {
 
       {/* ── Values grid ──────────────────────────────────────────────────── */}
       <section style={{
-        backgroundColor: 'oklch(15% 0.022 252)',
+        backgroundColor: 'oklch(21% 0.09 252)',
         padding: 'clamp(5rem, 10vw, 9rem) clamp(1.25rem, 4vw, 2.5rem)',
       }}>
         <div ref={valuesGrid.ref} style={{ maxWidth: '1320px', margin: '0 auto' }}>
@@ -302,7 +302,7 @@ export default function OurValues() {
             <p style={{
               fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 700,
               fontSize: '0.6875rem', letterSpacing: '0.13em', textTransform: 'uppercase',
-              color: 'oklch(47% 0.075 252)', marginBottom: '1rem',
+              color: 'oklch(62% 0.075 252)', marginBottom: '1rem',
             }}>
               What We Stand For
             </p>

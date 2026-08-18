@@ -155,7 +155,7 @@ export default function Hero() {
             transition: 'opacity 0.7s ease 0.35s, transform 0.7s ease 0.35s',
           }}
         >
-          Connecting Manufacturers to Markets
+          Where Manufacturers Meet Opportunity.
         </p>
 
         {/* Sub copy */}
@@ -164,7 +164,7 @@ export default function Hero() {
             fontFamily: "'Chivo', sans-serif",
             fontSize: 'clamp(1rem, 1.6vw, 1.125rem)',
             lineHeight: 1.7,
-            color: 'oklch(62% 0.055 252)',
+            color: 'oklch(74% 0.055 252)',
             maxWidth: '52ch',
             marginBottom: 'clamp(2rem, 4vw, 3rem)',
             opacity: loaded ? 1 : 0,
@@ -258,7 +258,7 @@ export default function Hero() {
             display: 'flex',
             alignItems: 'center',
             gap: '0.75rem',
-            color: 'oklch(39% 0.065 252)',
+            color: 'oklch(54% 0.065 252)',
             opacity: loaded ? 1 : 0,
             transition: 'opacity 0.7s ease 0.8s',
           }}

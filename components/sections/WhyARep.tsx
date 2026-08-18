@@ -97,7 +97,7 @@ export default function WhyARep() {
                 <span style={{
                   fontFamily: "'Big Shoulders Display', sans-serif",
                   fontWeight: 900, fontSize: '0.75rem', letterSpacing: '0.06em',
-                  color: 'oklch(38% 0.10 252)', paddingTop: '0.2rem',
+                  color: 'oklch(54% 0.10 252)', paddingTop: '0.2rem',
                 }}>
                   {r.num}
                 </span>
@@ -112,7 +112,7 @@ export default function WhyARep() {
                   <p style={{
                     fontFamily: "'Chivo', sans-serif",
                     fontSize: '0.875rem', lineHeight: 1.65,
-                    color: 'oklch(58% 0.05 252)',
+                    color: 'oklch(68% 0.05 252)',
                   }}>
                     {r.body}
                   </p>
