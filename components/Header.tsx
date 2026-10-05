@@ -60,7 +60,7 @@ export default function Header() {
             style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}
           >
             <Image
-              src="/Dans-Website/logo-white.png"
+              src="/logo-white.png"
               alt="Electric Component Sales"
               width={180}
               height={50}

@@ -6,7 +6,7 @@ import Link from 'next/link';
 const VALUES = [
   {
     title: 'Integrity',
-    desc: 'We build human-centred relationships with honesty, transparency, and ethics at every step — with our manufacturers, our customers, and each other.',
+    desc: 'We build human-centred relationships with honesty, transparency, and ethics at every step, with our manufacturers, our customers, and each other.',
     icon: (
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
@@ -16,7 +16,7 @@ const VALUES = [
   },
   {
     title: 'Accountability',
-    desc: 'We own our results. When we make a commitment to a manufacturer or a customer, we see it through — no excuses, no deflection.',
+    desc: 'We own our results. When we make a commitment to a manufacturer or a customer, we see it through. No excuses, no deflection.',
     icon: (
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10"/>
@@ -26,7 +26,7 @@ const VALUES = [
   },
   {
     title: 'Expertise',
-    desc: 'We invest in deep product and market knowledge so we can deliver real value — not just a brochure. Our reps are technical resources, not order takers.',
+    desc: 'We invest in deep product and market knowledge so we can deliver real value, not just a brochure. Our reps are technical resources, not order takers.',
     icon: (
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
@@ -36,7 +36,7 @@ const VALUES = [
   },
   {
     title: 'Teamwork',
-    desc: 'We support, encourage, and communicate — inside ECS and across our entire network of manufacturers and customers. Your success is our success.',
+    desc: 'We support, encourage, and communicate, inside ECS and across our entire network of manufacturers and customers. Your success is our success.',
     icon: (
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
@@ -61,7 +61,7 @@ const CULTURE = [
   {
     label: 'Our Culture',
     heading: 'A TEAM THAT SHOWS UP',
-    body: "ECS is a small, focused team — which means every person counts. We don't have layers of management between you and a decision. We have experienced people who know their markets, respect their relationships, and take pride in doing the job right.",
+    body: "ECS is a small, focused team, which means every person counts. We don't have layers of management between you and a decision. We have experienced people who know their markets, respect their relationships, and take pride in doing the job right.",
   },
   {
     label: 'Our Commitment',
@@ -71,7 +71,7 @@ const CULTURE = [
   {
     label: 'Our Standard',
     heading: 'BEYOND EXPECTATIONS',
-    body: "Good enough isn't good enough for ECS. We set the bar at exceeding expectations — whether that's product knowledge, responsiveness, or follow-through. Our manufacturers get a partner. Our customers get an advocate.",
+    body: "Good enough isn't good enough for ECS. We set the bar at exceeding expectations, whether that's product knowledge, responsiveness, or follow-through. Our manufacturers get a partner. Our customers get an advocate.",
   },
 ];
 
@@ -208,7 +208,7 @@ export default function OurValues() {
           </p>
           <h1 style={{
             fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 900,
-            fontSize: 'clamp(3rem, 8vw, 8rem)', lineHeight: 0.93,
+            fontSize: 'clamp(2rem, 4.5vw, 4rem)', lineHeight: 0.93,
             letterSpacing: '-0.025em', color: 'oklch(97% 0.008 252)',
             marginBottom: 'clamp(1.5rem, 3vw, 2rem)', maxWidth: '14ch',
           }}>
@@ -270,7 +270,7 @@ export default function OurValues() {
               lineHeight: 1.75, color: 'oklch(27% 0.08 252)',
               marginBottom: '1.25rem',
             }}>
-              This mission isn&apos;t a tagline — it&apos;s the standard we hold ourselves to
+              This mission isn&apos;t a tagline. It&apos;s the standard we hold ourselves to
               in every manufacturer relationship and every customer interaction. After
               57 years, it remains the measure of everything we do.
             </p>
@@ -279,7 +279,7 @@ export default function OurValues() {
               fontSize: 'clamp(1rem, 1.4vw, 1.125rem)',
               lineHeight: 1.75, color: 'oklch(44% 0.038 252)',
             }}>
-              The five values below aren&apos;t aspirational — they describe how the ECS
+              The five values below aren&apos;t aspirational. They describe how the ECS
               team actually operates, day in and day out, across every division and
               every market we serve.
             </p>

@@ -148,8 +148,8 @@ export default function WhyARep() {
               maxWidth: '46ch', marginBottom: '1.5rem',
             }}>
               Any rep can make the case above. What separates ECS is the depth of
-              specialisation across three distinct groups — Electronic, Electrical,
-              and Networking — each with its own dedicated team and established
+              specialisation across three distinct groups: Electronic, Electrical,
+              and Networking, each with its own dedicated team and established
               customer base.
             </p>
             <p style={{
@@ -159,7 +159,7 @@ export default function WhyARep() {
               maxWidth: '46ch',
             }}>
               Your product doesn&apos;t get handed to a generalist. It gets placed with
-              the group that has the right relationships for your market — Medical,
+              the group that has the right relationships for your market: Medical,
               Military, Industrial, Commercial, or Networking infrastructure.
             </p>
           </div>

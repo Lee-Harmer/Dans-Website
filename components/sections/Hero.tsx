@@ -122,7 +122,7 @@ export default function Hero() {
           style={{
             fontFamily: "'Big Shoulders Display', sans-serif",
             fontWeight: 900,
-            fontSize: 'clamp(3.5rem, 10vw, 10.5rem)',
+            fontSize: 'clamp(2.25rem, 4vw, 3.5rem)',
             lineHeight: 0.92,
             letterSpacing: '-0.025em',
             color: 'oklch(99.5% 0.003 252)',

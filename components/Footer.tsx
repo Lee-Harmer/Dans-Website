@@ -35,7 +35,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Image
-              src="/Dans-Website/logo-padded.png"
+              src="/logo-padded.png"
               alt="Electric Component Sales"
               width={160}
               height={44}

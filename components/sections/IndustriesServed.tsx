@@ -34,13 +34,13 @@ const INDUSTRIES = [
     name: 'End User',
     desc: 'Direct support for facility managers and operations teams.',
     points: ['MRO supply relationships', 'On-site product support', 'Multi-site account management'],
-    image: 'https://images.unsplash.com/photo-1565514020179-026b92b2d70b?w=800&q=75',
+    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=75',
   },
   {
     name: 'Industrial Automation',
     desc: 'Components for the machines that drive modern manufacturing.',
     points: ['Switches & sensors', 'Control panel components', 'Motion & drive solutions'],
-    image: 'https://images.unsplash.com/photo-1565515636309-78e5e9e726de?w=800&q=75',
+    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=75',
   },
   {
     name: 'Medical',
@@ -60,7 +60,7 @@ const VALUES = [
   {
     num: '01',
     title: 'Relationships First',
-    desc: 'We build lasting partnerships with manufacturers, distributors, and end users — not just transactions. When you call ECS, you reach someone who knows your business personally.',
+    desc: 'We build lasting partnerships with manufacturers, distributors, and end users - not just transactions. When you call ECS, you reach someone who knows your business personally.',
   },
   {
     num: '02',
@@ -70,7 +70,7 @@ const VALUES = [
   {
     num: '03',
     title: 'Three Divisions. One Region.',
-    desc: 'ECS offers manufacturers a unique advantage: three specialised sales channels within a single trade area. More coverage, more expertise, more results — all coordinated under one roof.',
+    desc: 'ECS offers manufacturers a unique advantage: three specialised sales channels within a single trade area. More coverage, more expertise, more results, all coordinated under one roof.',
   },
 ];
 
@@ -81,7 +81,7 @@ const TESTIMONIALS = [
     company: 'Electronic Components Manufacturer',
   },
   {
-    quote: 'What sets ECS apart is the personal attention. They know our customers as well as we do — and that kind of relationship drives real results.',
+    quote: 'What sets ECS apart is the personal attention. They know our customers as well as we do, and that kind of relationship drives real results.',
     author: 'VP of Marketing',
     company: 'Electrical Equipment Supplier',
   },
@@ -189,7 +189,7 @@ function IndustryCard({ industry, index, visible }: { industry: typeof INDUSTRIE
               color: 'oklch(82% 0.025 252)',
               display: 'flex', alignItems: 'flex-start', gap: '0.5rem',
             }}>
-              <span style={{ color: 'oklch(62% 0.1 252)', flexShrink: 0, marginTop: '2px' }}>—</span>
+              <span style={{ color: 'oklch(62% 0.1 252)', flexShrink: 0, marginTop: '2px' }}>·</span>
               {point}
             </li>
           ))}
@@ -218,16 +218,19 @@ export default function IndustriesServed() {
         position: 'relative',
         overflow: 'hidden',
       }}>
-        <div aria-hidden style={{
-          position: 'absolute', top: '50%', right: '-2%',
-          transform: 'translateY(-50%)',
-          fontFamily: "'Big Shoulders Display', sans-serif",
-          fontWeight: 900, fontSize: 'clamp(8rem, 22vw, 26rem)',
-          lineHeight: 1, color: 'oklch(28% 0.11 252)',
-          userSelect: 'none', pointerEvents: 'none', whiteSpace: 'nowrap',
-        }}>
-          ECS
-        </div>
+        <img
+          aria-hidden
+          src="/logo-white.png"
+          alt=""
+          style={{
+            position: 'absolute', top: '50%', right: '-4%',
+            transform: 'translateY(-50%)',
+            width: 'clamp(22rem, 55vw, 68rem)',
+            opacity: 0.07,
+            userSelect: 'none', pointerEvents: 'none',
+            filter: 'brightness(10)',
+          }}
+        />
         <div
           ref={hero.ref}
           style={{
@@ -246,7 +249,7 @@ export default function IndustriesServed() {
           </p>
           <h1 style={{
             fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 900,
-            fontSize: 'clamp(3rem, 8vw, 8rem)', lineHeight: 0.93,
+            fontSize: 'clamp(2rem, 4.5vw, 4rem)', lineHeight: 0.93,
             letterSpacing: '-0.025em', color: 'oklch(97% 0.008 252)',
             marginBottom: 'clamp(1.5rem, 3vw, 2.5rem)', maxWidth: '14ch',
           }}>
@@ -261,9 +264,65 @@ export default function IndustriesServed() {
             maxWidth: '52ch',
           }}>
             For over 57 years, ECS has built deep roots across the markets that matter most
-            in the Upper Midwest — delivering expert manufacturer representation to every
+            in the Upper Midwest, delivering expert manufacturer representation to every
             industry we serve.
           </p>
+        </div>
+      </section>
+
+      {/* ── Industry cards ───────────────────────────────────────────────── */}
+      <section style={{
+        backgroundColor: 'oklch(21% 0.09 252)',
+        padding: 'clamp(5rem, 10vw, 9rem) clamp(1.25rem, 4vw, 2.5rem)',
+      }}>
+        <div ref={cardsSection.ref} style={{ maxWidth: '1320px', margin: '0 auto' }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '2rem',
+            marginBottom: 'clamp(3rem, 6vw, 5rem)',
+            opacity: cardsSection.visible ? 1 : 0,
+            transform: cardsSection.visible ? 'translateY(0)' : 'translateY(24px)',
+            transition: 'opacity 0.65s ease, transform 0.65s ease',
+          }}>
+            <div>
+              <p style={{
+                fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 700,
+                fontSize: '0.6875rem', letterSpacing: '0.13em', textTransform: 'uppercase',
+                color: 'oklch(62% 0.075 252)', marginBottom: '1rem',
+              }}>
+                Markets We Serve
+              </p>
+              <h2 style={{
+                fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 900,
+                fontSize: 'clamp(2.25rem, 5vw, 4.5rem)',
+                lineHeight: 0.97, letterSpacing: '-0.02em', color: 'oklch(92% 0.025 252)',
+              }}>
+                INDUSTRIES
+                <br />
+                SERVED
+              </h2>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'flex-end' }}>
+              <p style={{
+                fontFamily: "'Chivo', sans-serif",
+                fontSize: 'clamp(1rem, 1.4vw, 1.0625rem)',
+                lineHeight: 1.7, color: 'oklch(68% 0.05 252)', maxWidth: '48ch',
+              }}>
+                Hover over an industry to see how ECS adds value in that market.
+              </p>
+            </div>
+          </div>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+            gap: '1rem',
+          }}>
+            {INDUSTRIES.map((industry, i) => (
+              <IndustryCard key={industry.name} industry={industry} index={i} visible={cardsSection.visible} />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -376,62 +435,6 @@ export default function IndustriesServed() {
                   {val.desc}
                 </p>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Industry cards ───────────────────────────────────────────────── */}
-      <section style={{
-        backgroundColor: 'oklch(21% 0.09 252)',
-        padding: 'clamp(5rem, 10vw, 9rem) clamp(1.25rem, 4vw, 2.5rem)',
-      }}>
-        <div ref={cardsSection.ref} style={{ maxWidth: '1320px', margin: '0 auto' }}>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '2rem',
-            marginBottom: 'clamp(3rem, 6vw, 5rem)',
-            opacity: cardsSection.visible ? 1 : 0,
-            transform: cardsSection.visible ? 'translateY(0)' : 'translateY(24px)',
-            transition: 'opacity 0.65s ease, transform 0.65s ease',
-          }}>
-            <div>
-              <p style={{
-                fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 700,
-                fontSize: '0.6875rem', letterSpacing: '0.13em', textTransform: 'uppercase',
-                color: 'oklch(62% 0.075 252)', marginBottom: '1rem',
-              }}>
-                Markets We Serve
-              </p>
-              <h2 style={{
-                fontFamily: "'Big Shoulders Display', sans-serif", fontWeight: 900,
-                fontSize: 'clamp(2.25rem, 5vw, 4.5rem)',
-                lineHeight: 0.97, letterSpacing: '-0.02em', color: 'oklch(92% 0.025 252)',
-              }}>
-                INDUSTRIES
-                <br />
-                SERVED
-              </h2>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'flex-end' }}>
-              <p style={{
-                fontFamily: "'Chivo', sans-serif",
-                fontSize: 'clamp(1rem, 1.4vw, 1.0625rem)',
-                lineHeight: 1.7, color: 'oklch(68% 0.05 252)', maxWidth: '48ch',
-              }}>
-                Hover over an industry to see how ECS adds value in that market.
-              </p>
-            </div>
-          </div>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-            gap: '1rem',
-          }}>
-            {INDUSTRIES.map((industry, i) => (
-              <IndustryCard key={industry.name} industry={industry} index={i} visible={cardsSection.visible} />
             ))}
           </div>
         </div>
@@ -562,7 +565,7 @@ export default function IndustriesServed() {
             maxWidth: '52ch', margin: '0 auto clamp(2rem, 4vw, 3rem)',
           }}>
             Whether you&apos;re a manufacturer looking to expand your Upper Midwest presence,
-            or a customer searching for the right product — ECS is on your side.
+            or a customer searching for the right product. ECS is on your side.
           </p>
           <Link
             href="/contact"

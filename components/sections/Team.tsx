@@ -9,13 +9,13 @@ const TEAM = [
     email: 'dgartner@ecs-sales.com',
     phone: '612.991.9900',
     linkedin: 'https://www.linkedin.com/in/david-gartner-6093932bb/',
-    photo: '/Dans-Website/team-4.jpg',
+    photo: '/team-4.jpg',
     territory: ['All Territories'],
     bio: `David Gartner is President of ECS, a technical manufacturers' representative firm focused on electrical and electronic components and systems. He leads the organization while remaining actively involved in employee coaching, manufacturer line management and growth, new principal recruitment, and direct sales to key accounts.
 
 A University of Minnesota Electrical Engineering graduate (1988), David joined ECS immediately after graduation. He has since gained broad experience across all territories and industry segments, building deep knowledge of the products and manufacturers ECS represents.
 
-David excels at translating customer requirements into effective solutions — from cable management and wire harnesses to complex custom user interfaces and power systems. His strong technical expertise, problem-solving skills, and collaborative approach make him a trusted partner who helps customers achieve their design and project goals.
+David excels at translating customer requirements into effective solutions, from cable management and wire harnesses to complex custom user interfaces and power systems. His strong technical expertise, problem-solving skills, and collaborative approach make him a trusted partner who helps customers achieve their design and project goals.
 
 He is most fulfilled when quarterbacking successful engagements that deliver real results for both customers and ECS principals. Outside work, David enjoys alpine ski race coaching, mountain bike racing, extreme skiing, fly fishing, golf, and fast-paced outdoor adventures.`,
   },
@@ -25,11 +25,11 @@ He is most fulfilled when quarterbacking successful engagements that deliver rea
     email: 'dgish@ecs-sales.com',
     phone: '651.324.0369',
     linkedin: 'https://www.linkedin.com/in/danielle-gish-4b896a184/',
-    photo: '/Dans-Website/team-2.jpg',
+    photo: '/team-2.jpg',
     territory: ['N. Minnesota', 'North Dakota'],
     bio: `Dani has been part of the ECS team for over eight years and proudly serves customers throughout Minnesota and North Dakota. She enjoys building relationships, solving problems, and helping customers find the right solutions. The people are her favorite part of the job, and she believes the strongest partnerships are built on trust, communication, and genuine connections.
 
-Before joining ECS, Dani spent 10 years living in Colorado before returning to Northern Minnesota, where she now calls home. Outside of work, she enjoys hiking with her dogs, spending time on the lake, caring for her chickens, and planning her next mountain adventure. Her dogs, however, remain her biggest priority — they run the household, appear in most of her photos, and have even attended a few trade shows over the years.`,
+Before joining ECS, Dani spent 10 years living in Colorado before returning to Northern Minnesota, where she now calls home. Outside of work, she enjoys hiking with her dogs, spending time on the lake, caring for her chickens, and planning her next mountain adventure. Her dogs, however, remain her biggest priority. They run the household, appear in most of her photos, and have even attended a few trade shows over the years.`,
   },
   {
     name: 'Bryon George',
@@ -37,7 +37,7 @@ Before joining ECS, Dani spent 10 years living in Colorado before returning to N
     email: 'bgeorge@ecs-sales.com',
     phone: '507.810.0173',
     linkedin: 'https://www.linkedin.com/in/bryon-george-761124216/',
-    photo: '/Dans-Website/team-3.jpg',
+    photo: '/team-3.jpg',
     territory: ['S. Minnesota', 'W. Wisconsin', 'Metro Area'],
     bio: `Bryon George joined ECS in early 2025, bringing more than 20 years of experience in the electrical and electronics industry. Throughout his career, he has developed a strong reputation for building lasting relationships and helping customers identify the right solutions to meet their unique needs. His industry knowledge, customer-focused approach, and commitment to service make him a valuable resource for customers.
 
@@ -49,7 +49,7 @@ Bryon resides in Southern Minnesota with his wife and children, where family is 
     email: 'dbenko@ecs-sales.com',
     phone: '612.600.9464',
     linkedin: 'https://www.linkedin.com/in/drew-benko-859b9360/',
-    photo: '/Dans-Website/team-1.jpg',
+    photo: '/team-1.jpg',
     territory: ['Metro Area', 'South Dakota', 'Fargo ND (Electronic)'],
     bio: `Drew has been an important part of the ECS team for 12 years, known for his strong work ethic, dependable nature, and ability to bring a little humor to any situation. After attending the University of Minnesota Duluth, he built a career focused on building relationships and delivering exceptional support to customers and partners.
 
@@ -61,7 +61,7 @@ Outside of work, Drew enjoys spending time with his wife, Angie, and their two s
     email: null,
     phone: '651.325.8594',
     linkedin: 'https://www.linkedin.com/in/cindy-amundsen-4117711b/',
-    photo: '/Dans-Website/team-cindy.png',
+    photo: '/team-cindy.png',
     territory: [],
     bio: `For over 30 years, Cindy has been a valued member of the ECS family. Her dedication, experience, and genuine care for customers and coworkers have made her an important part of the team and the relationships that ECS is built on.
 
@@ -356,7 +356,7 @@ export default function Team() {
       id="team"
       style={{
         backgroundColor: 'oklch(97% 0.008 252)',
-        padding: 'clamp(5rem, 10vw, 9rem) clamp(1.25rem, 4vw, 2.5rem)',
+        padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 4vw, 2.5rem)',
       }}
     >
       <div ref={ref} style={{ maxWidth: '1320px', margin: '0 auto' }}>
@@ -384,13 +384,13 @@ export default function Team() {
                 marginBottom: '1rem',
               }}
             >
-              Our Team
+              Meet the Team
             </p>
             <h2
               style={{
                 fontFamily: "'Big Shoulders Display', sans-serif",
                 fontWeight: 900,
-                fontSize: 'clamp(2.25rem, 5vw, 4.5rem)',
+                fontSize: 'clamp(2rem, 4vw, 3.5rem)',
                 lineHeight: 0.97,
                 letterSpacing: '-0.02em',
                 color: 'oklch(15% 0.022 252)',

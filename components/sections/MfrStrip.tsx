@@ -1,14 +1,14 @@
 import Link from 'next/link';
 
 const LOGOS = [
-  { name: 'ArkX Labs',          src: '/Dans-Website/manufacturers/arkx-logo.png' },
-  { name: 'Cirrus Logic',       src: '/Dans-Website/manufacturers/cirrus-logo.png' },
-  { name: 'HellermannTyton',    src: '/Dans-Website/manufacturers/hellermann-logo-v2.png' },
-  { name: 'Japan Display Inc.', src: '/Dans-Website/manufacturers/jdi-logo.png' },
-  { name: 'Marquardt',          src: '/Dans-Website/manufacturers/marquardt-logo.png' },
-  { name: 'IRC / TT Electronics', src: '/Dans-Website/manufacturers/irc-logo.png' },
-  { name: 'Viking Technology',  src: '/Dans-Website/manufacturers/viking-logo.png' },
-  { name: 'OmniOn Power',       src: '/Dans-Website/manufacturers/omnion-logo.png' },
+  { name: 'ArkX Labs',          src: '/manufacturers/arkx-logo.png' },
+  { name: 'Cirrus Logic',       src: '/manufacturers/cirrus-logo.png' },
+  { name: 'HellermannTyton',    src: '/manufacturers/hellermann-logo-v2.png' },
+  { name: 'Japan Display Inc.', src: '/manufacturers/jdi-logo.png' },
+  { name: 'Marquardt',          src: '/manufacturers/marquardt-logo.png' },
+  { name: 'IRC / TT Electronics', src: '/manufacturers/irc-logo.png' },
+  { name: 'Viking Technology',  src: '/manufacturers/viking-logo.png' },
+  { name: 'OmniOn Power',       src: '/manufacturers/omnion-logo.png' },
 ];
 
 export default function MfrStrip() {
