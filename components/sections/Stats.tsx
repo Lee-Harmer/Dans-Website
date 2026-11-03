@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState } from 'react';
 
 const STATS = [
-  { value: '57+', label: 'Years in Business',       sub: 'Founded 1967' },
-  { value: '3',   label: 'Specialised Divisions',   sub: 'Electronic · Electrical · Networking' },
-  { value: '20+', label: 'Premier Manufacturers',   sub: 'World-class partners' },
-  { value: '5',   label: 'Key End Markets',          sub: 'Medical · Military · Industrial · OEM · Commercial' },
+  { value: '57+', label: 'Years of Market Presence', sub: 'Est. 1967' },
+  { value: '2',   label: 'Core Focus Areas',          sub: 'Electronic · Electrical' },
+  { value: 'Select', label: 'Premier Manufacturers', sub: 'A focused group of world-class partners' },
+  { value: '5',   label: 'Key End Markets',           sub: 'OEM · Industrial · Commercial · Medical · Military' },
 ];
 
 function useInView(threshold = 0.2) {

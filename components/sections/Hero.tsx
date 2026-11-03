@@ -155,7 +155,7 @@ export default function Hero() {
             transition: 'opacity 0.7s ease 0.35s, transform 0.7s ease 0.35s',
           }}
         >
-          Where Manufacturers Meet Opportunity.
+          Focused representation. Real relationships.<br />Results that last.
         </p>
 
         {/* Sub copy */}
@@ -172,9 +172,10 @@ export default function Hero() {
             transition: 'opacity 0.7s ease 0.4s, transform 0.7s ease 0.4s',
           }}
         >
-          For over 57 years, Electric Component Sales has represented premier manufacturers
-          across the Electronic, Electrical, and Networking markets, serving Medical,
-          Military, Industrial, and Commercial customers throughout the Upper Midwest.
+          For over 57 years, Electric Component Sales has delivered premier manufacturer
+          representation across the Electronic and Electrical markets. We are a focused team
+          that shows up, builds trust through competency, and executes seamlessly for
+          world-class partners across the Upper Midwest.
         </p>
 
         {/* CTAs */}

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-const TEAM = [
+const FIELD_REPS = [
   {
     name: 'David Gartner',
     title: 'President',
@@ -20,8 +20,20 @@ David excels at translating customer requirements into effective solutions, from
 He is most fulfilled when quarterbacking successful engagements that deliver real results for both customers and ECS principals. Outside work, David enjoys alpine ski race coaching, mountain bike racing, extreme skiing, fly fishing, golf, and fast-paced outdoor adventures.`,
   },
   {
+    name: 'Drew Benko',
+    title: 'Field Representative',
+    email: 'dbenko@ecs-sales.com',
+    phone: '612.600.9464',
+    linkedin: 'https://www.linkedin.com/in/drew-benko-859b9360/',
+    photo: '/team-1.jpg',
+    territory: ['Metro Area', 'South Dakota', 'Fargo ND (Electronic)'],
+    bio: `Drew has been an important part of the ECS team for 12 years, known for his strong work ethic, dependable nature, and ability to bring a little humor to any situation. After attending the University of Minnesota Duluth, he built a career focused on building relationships and delivering exceptional support to customers and partners.
+
+Outside of work, Drew enjoys spending time with his wife, Angie, and their two sons. Much of his free time revolves around baseball games, basketball courts, and family adventures. When he gets the chance, he enjoys fishing and spending time in Ely, Minnesota. Drew also proudly serves his community through the Bloomington Fire Department, reflecting his commitment to helping others both professionally and personally. Whether he's helping a customer, supporting a teammate, or sharing a laugh, Drew is someone people enjoy working with.`,
+  },
+  {
     name: 'Dani Gish',
-    title: 'Account Representative',
+    title: 'Field Representative',
     email: 'dgish@ecs-sales.com',
     phone: '651.324.0369',
     linkedin: 'https://www.linkedin.com/in/danielle-gish-4b896a184/',
@@ -33,7 +45,7 @@ Before joining ECS, Dani spent 10 years living in Colorado before returning to N
   },
   {
     name: 'Bryon George',
-    title: 'Account Representative',
+    title: 'Field Representative',
     email: 'bgeorge@ecs-sales.com',
     phone: '507.810.0173',
     linkedin: 'https://www.linkedin.com/in/bryon-george-761124216/',
@@ -43,18 +55,9 @@ Before joining ECS, Dani spent 10 years living in Colorado before returning to N
 
 Bryon resides in Southern Minnesota with his wife and children, where family is at the center of everything he does. Outside of work, he enjoys spending time with his family and pursuing outdoor activities, particularly hunting and fishing. His dedication to family, community, and the outdoors reflects the same integrity, work ethic, and commitment he brings to serving customers every day.`,
   },
-  {
-    name: 'Drew Benko',
-    title: 'Account Representative',
-    email: 'dbenko@ecs-sales.com',
-    phone: '612.600.9464',
-    linkedin: 'https://www.linkedin.com/in/drew-benko-859b9360/',
-    photo: '/team-1.jpg',
-    territory: ['Metro Area', 'South Dakota', 'Fargo ND (Electronic)'],
-    bio: `Drew has been an important part of the ECS team for 12 years, known for his strong work ethic, dependable nature, and ability to bring a little humor to any situation. After attending the University of Minnesota Duluth, he built a career focused on building relationships and delivering exceptional support to customers and partners.
+];
 
-Outside of work, Drew enjoys spending time with his wife, Angie, and their two sons. Much of his free time revolves around baseball games, basketball courts, and family adventures. When he gets the chance, he enjoys fishing and spending time in Ely, Minnesota. Drew also proudly serves his community through the Bloomington Fire Department, reflecting his commitment to helping others both professionally and personally. Whether he's helping a customer, supporting a teammate, or sharing a laugh, Drew is someone people enjoy working with.`,
-  },
+const INSIDE_SALES = [
   {
     name: 'Cindy Amundsen',
     title: 'Inside Sales',
@@ -62,7 +65,7 @@ Outside of work, Drew enjoys spending time with his wife, Angie, and their two s
     phone: '651.325.8594',
     linkedin: 'https://www.linkedin.com/in/cindy-amundsen-4117711b/',
     photo: '/team-cindy.png',
-    territory: [],
+    territory: [] as string[],
     bio: `For over 30 years, Cindy has been a valued member of the ECS family. Her dedication, experience, and genuine care for customers and coworkers have made her an important part of the team and the relationships that ECS is built on.
 
 Outside of work, Cindy loves spending time in her garden, especially when it's filled with colorful flowers. She also enjoys being outdoors with her two dogs and cherishes time spent with her son, Sam. Whether she's helping customers or tending to her garden, Cindy brings warmth, kindness, and care to everything she does.`,
@@ -93,7 +96,7 @@ function PlaceholderAvatar() {
   );
 }
 
-function TeamCard({ member, index, visible }: { member: typeof TEAM[0]; index: number; visible: boolean }) {
+function TeamCard({ member, index, visible }: { member: typeof FIELD_REPS[0]; index: number; visible: boolean }) {
   const [expanded, setExpanded] = useState(false);
   const paragraphs = member.bio.split('\n\n').filter(Boolean);
   const previewParagraphs = paragraphs.slice(0, 1);
@@ -418,17 +421,64 @@ export default function Team() {
           </div>
         </div>
 
-        {/* Team grid */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
-            gap: 'clamp(1rem, 2vw, 1.5rem)',
-          }}
-        >
-          {TEAM.map((member, i) => (
-            <TeamCard key={member.name} member={member} index={i} visible={visible} />
-          ))}
+        {/* Field Representatives */}
+        <div style={{ marginBottom: 'clamp(3rem, 6vw, 5rem)' }}>
+          <p
+            style={{
+              fontFamily: "'Big Shoulders Display', sans-serif",
+              fontWeight: 700,
+              fontSize: '0.6875rem',
+              letterSpacing: '0.13em',
+              textTransform: 'uppercase',
+              color: 'oklch(47% 0.075 252)',
+              marginBottom: '1.5rem',
+              opacity: visible ? 1 : 0,
+              transition: 'opacity 0.5s ease 0.1s',
+            }}
+          >
+            Field Representatives
+          </p>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
+              gap: 'clamp(1rem, 2vw, 1.5rem)',
+            }}
+          >
+            {FIELD_REPS.map((member, i) => (
+              <TeamCard key={member.name} member={member} index={i} visible={visible} />
+            ))}
+          </div>
+        </div>
+
+        {/* Inside Sales */}
+        <div>
+          <p
+            style={{
+              fontFamily: "'Big Shoulders Display', sans-serif",
+              fontWeight: 700,
+              fontSize: '0.6875rem',
+              letterSpacing: '0.13em',
+              textTransform: 'uppercase',
+              color: 'oklch(47% 0.075 252)',
+              marginBottom: '1.5rem',
+              opacity: visible ? 1 : 0,
+              transition: 'opacity 0.5s ease 0.1s',
+            }}
+          >
+            Inside Sales
+          </p>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
+              gap: 'clamp(1rem, 2vw, 1.5rem)',
+            }}
+          >
+            {INSIDE_SALES.map((member, i) => (
+              <TeamCard key={member.name} member={member} index={i} visible={visible} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

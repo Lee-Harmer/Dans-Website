@@ -3,6 +3,7 @@ import Hero from '@/components/sections/Hero';
 import Stats from '@/components/sections/Stats';
 import MfrStrip from '@/components/sections/MfrStrip';
 import About from '@/components/sections/About';
+import HowWeDeliver from '@/components/sections/HowWeDeliver';
 import WhyARep from '@/components/sections/WhyARep';
 import Footer from '@/components/Footer';
 
@@ -15,6 +16,7 @@ export default function Home() {
         <Stats />
         <MfrStrip />
         <About />
+        <HowWeDeliver />
         <WhyARep />
       </main>
       <Footer />

@@ -20,7 +20,7 @@ const REPS = [
   {
     id: 'dani',
     name: 'Dani Gish',
-    title: 'Account Representative',
+    title: 'Field Representative',
     phone: '651.324.0369',
     email: 'dgish@ecs-sales.com',
     photo: '/team-2.jpg',
@@ -33,12 +33,12 @@ const REPS = [
   {
     id: 'bryon',
     name: 'Bryon George',
-    title: 'Account Representative',
+    title: 'Field Representative',
     phone: '507.810.0173',
     email: 'bgeorge@ecs-sales.com',
     photo: '/team-3.jpg',
     states: ['MN', 'WI'],
-    coverage: 'S. Minnesota, Wisconsin & Metro',
+    coverage: 'S. Minnesota, W. Wisconsin & Metro',
     fill: '#2B5EA7',
     fillActive: '#3D78D4',
     accentCss: 'oklch(46% 0.14 245)',
@@ -46,7 +46,7 @@ const REPS = [
   {
     id: 'drew',
     name: 'Drew Benko',
-    title: 'Account Representative',
+    title: 'Field Representative',
     phone: '612.600.9464',
     email: 'dbenko@ecs-sales.com',
     photo: '/team-1.jpg',
@@ -83,6 +83,8 @@ const CONTEXT_STATES = [
   { id: 'MT', d: 'M 20 28 L 230 22 L 235 90 L 188 92 L 168 132 L 20 128 Z', lx: 120, ly: 76 },
   { id: 'WY', d: 'M 168 132 L 280 128 L 284 208 L 166 210 Z', lx: 224, ly: 168 },
   { id: 'CO', d: 'M 166 210 L 284 208 L 288 284 L 168 282 Z', lx: 226, ly: 246 },
+  { id: 'NE', d: 'M 168 210 L 234 208 L 462 210 L 464 194 L 476 202 L 480 226 L 472 244 L 472 286 L 328 284 L 326 268 L 166 266 Z', lx: 322, ly: 248 },
+  { id: 'IA', d: 'M 394 192 L 464 194 L 476 202 L 492 200 L 504 188 L 516 192 L 528 188 L 542 180 L 556 168 L 560 234 L 560 240 L 472 232 L 472 244 L 480 226 L 476 202 L 464 194 Z', lx: 510, ly: 210 },
   { id: 'KS', d: 'M 330 284 L 472 286 L 470 344 L 328 342 Z', lx: 400, ly: 314 },
   { id: 'MO', d: 'M 472 232 L 560 234 L 564 296 L 548 318 L 524 332 L 470 344 L 472 286 Z', lx: 518, ly: 288 },
   { id: 'IL', d: 'M 556 168 L 600 170 L 602 258 L 588 296 L 564 296 L 560 234 L 556 168 Z', lx: 578, ly: 228 },
@@ -92,18 +94,14 @@ const CONTEXT_STATES = [
 const TERRITORY_STATES = [
   { id: 'ND', d: 'M 230 22 L 390 18 L 394 98 L 232 100 Z', lx: 312, ly: 58 },
   { id: 'MN', d: 'M 390 18 L 486 20 L 488 48 L 524 52 L 528 108 L 516 132 L 508 158 L 504 188 L 492 188 L 488 198 L 476 202 L 464 194 L 394 192 L 394 98 Z', lx: 444, ly: 108 },
-  { id: 'WI', d: 'M 508 158 L 516 132 L 528 108 L 540 112 L 564 106 L 600 128 L 602 170 L 600 170 L 556 168 L 542 180 L 528 188 L 516 192 L 504 188 Z', lx: 556, ly: 148 },
+  { id: 'W. WI', d: 'M 508 158 L 516 132 L 528 108 L 540 112 L 564 106 L 600 128 L 602 170 L 600 170 L 556 168 L 542 180 L 528 188 L 516 192 L 504 188 Z', lx: 556, ly: 148 },
   { id: 'SD', d: 'M 232 100 L 394 98 L 394 192 L 464 194 L 462 210 L 234 208 Z', lx: 314, ly: 152 },
-  { id: 'NE', d: 'M 168 210 L 234 208 L 462 210 L 464 194 L 476 202 L 480 226 L 472 244 L 472 286 L 328 284 L 326 268 L 166 266 Z', lx: 322, ly: 248 },
-  { id: 'IA', d: 'M 394 192 L 464 194 L 476 202 L 492 200 L 504 188 L 516 192 L 528 188 L 542 180 L 556 168 L 560 234 L 560 240 L 472 232 L 472 244 L 480 226 L 476 202 L 464 194 Z', lx: 510, ly: 210 },
 ];
 
-// IA and NE are ECS service territory but don't have a dedicated field rep listed
-const ECS_ONLY_STATES = new Set(['IA', 'NE']);
-
 function getRepForState(stateId: string) {
-  if (ECS_ONLY_STATES.has(stateId)) return null;
-  return REPS.find(r => r.states.includes(stateId));
+  // Match W. WI to the WI entry in REPS
+  const lookupId = stateId === 'W. WI' ? 'WI' : stateId;
+  return REPS.find(r => r.states.includes(lookupId));
 }
 
 function RepCard({ rep, active, onClick }: { rep: typeof REPS[0]; active: boolean; onClick: () => void }) {
@@ -212,6 +210,7 @@ export default function Territory() {
     setActiveRep(activeRep === rep.id ? null : rep.id);
   }
 
+
   return (
     <section
       id="territory"
@@ -306,18 +305,17 @@ export default function Territory() {
               {/* Territory states — coloured + interactive */}
               {TERRITORY_STATES.map(s => {
                 const rep = getRepForState(s.id);
-                const isEcsOnly = ECS_ONLY_STATES.has(s.id);
                 const isRepActive = activeRep === rep?.id;
                 const isHovered = hoveredState === s.id;
                 const fillColor = rep
                   ? (isRepActive || isHovered ? rep.fillActive : rep.fill)
-                  : 'oklch(80% 0.016 252)'; // IA, NE — ECS territory, no dedicated rep
+                  : 'oklch(80% 0.016 252)';
                 return (
                   <g
                     key={s.id}
                     style={{ cursor: rep ? 'pointer' : 'default' }}
-                    onClick={() => !isEcsOnly && handleStateClick(s.id)}
-                    onMouseEnter={() => !isEcsOnly && setHoveredState(s.id)}
+                    onClick={() => handleStateClick(s.id)}
+                    onMouseEnter={() => rep && setHoveredState(s.id)}
                     onMouseLeave={() => setHoveredState(null)}
                     filter={isRepActive ? 'url(#stateglow)' : undefined}
                   >
@@ -386,12 +384,6 @@ export default function Territory() {
                   </span>
                 </button>
               ))}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <div style={{ width: '10px', height: '10px', borderRadius: '2px', backgroundColor: 'oklch(80% 0.016 252)', flexShrink: 0 }} />
-                <span style={{ fontFamily: "'Chivo', sans-serif", fontSize: '0.6875rem', color: 'oklch(54% 0.020 252)' }}>
-                  IA, NE: ECS Coverage
-                </span>
-              </div>
             </div>
           </div>
 

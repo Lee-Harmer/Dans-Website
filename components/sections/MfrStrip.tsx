@@ -1,14 +1,14 @@
 import Link from 'next/link';
 
 const LOGOS = [
-  { name: 'ArkX Labs',          src: '/manufacturers/arkx-logo.png' },
-  { name: 'Cirrus Logic',       src: '/manufacturers/cirrus-logo.png' },
-  { name: 'HellermannTyton',    src: '/manufacturers/hellermann-logo-v2.png' },
-  { name: 'Japan Display Inc.', src: '/manufacturers/jdi-logo.png' },
-  { name: 'Marquardt',          src: '/manufacturers/marquardt-logo.png' },
-  { name: 'IRC / TT Electronics', src: '/manufacturers/irc-logo.png' },
-  { name: 'Viking Technology',  src: '/manufacturers/viking-logo.png' },
-  { name: 'OmniOn Power',       src: '/manufacturers/omnion-logo.png' },
+  { name: 'HellermannTyton',         src: '/manufacturers/hellermann-logo-v2.png' },
+  { name: 'Klein Tools',             src: '/manufacturers/klein-logo.png' },
+  { name: 'Superior Tray Systems',   src: null },
+  { name: 'OmniOn Power',            src: '/manufacturers/omnion-logo.png' },
+  { name: 'Japan Display Inc.',      src: '/manufacturers/jdi-logo.png' },
+  { name: 'TT Electronics – Optek', src: '/manufacturers/optek-logo.png' },
+  { name: 'TT Electronics – IRC',   src: '/manufacturers/irc-logo.png' },
+  { name: 'TT Electronics – BI',    src: '/manufacturers/bi-logo.png' },
 ];
 
 export default function MfrStrip() {
@@ -58,11 +58,22 @@ export default function MfrStrip() {
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               minHeight: '72px',
             }}>
-              <img
-                src={logo.src}
-                alt={logo.name}
-                style={{ maxHeight: '32px', maxWidth: '100px', objectFit: 'contain', opacity: 0.75 }}
-              />
+              {logo.src ? (
+                <img
+                  src={logo.src}
+                  alt={logo.name}
+                  style={{ maxHeight: '32px', maxWidth: '100px', objectFit: 'contain', opacity: 0.75 }}
+                />
+              ) : (
+                <span style={{
+                  fontFamily: "'Big Shoulders Display', sans-serif",
+                  fontWeight: 800, fontSize: '0.65rem', letterSpacing: '0.05em',
+                  textTransform: 'uppercase', color: 'oklch(55% 0.04 252)',
+                  textAlign: 'center', lineHeight: 1.2,
+                }}>
+                  {logo.name}
+                </span>
+              )}
             </div>
           ))}
         </div>

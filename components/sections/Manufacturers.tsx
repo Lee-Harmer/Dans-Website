@@ -2,26 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 
-// TODO: Replace logo/productImage paths with real assets when client provides them
 const MANUFACTURERS = [
-  {
-    name: 'ArkX Labs',
-    category: 'Electronic',
-    desc: 'Advanced far-field voice capture and control technology. Production-ready voice processing modules and custom integration for demanding industrial and medical environments.',
-    markets: ['Industrial', 'Medical'],
-    website: 'https://placeholder.com',
-    logo: '/manufacturers/arkx-logo.png',
-    productImage: '/manufacturers/arkx-product.png',
-  },
-  {
-    name: 'Cirrus Logic',
-    category: 'Electronic',
-    desc: 'Low-power ICs for audio and voice signal processing, spanning the entire audio signal chain from capture to playback. Powers the world\'s top smartphones, wearables, and smart-home devices.',
-    markets: ['Consumer', 'Industrial', 'Medical'],
-    website: 'https://cirrus.com',
-    logo: '/manufacturers/cirrus-logo.png',
-    productImage: '/manufacturers/cirrus-product.png',
-  },
   {
     name: 'HellermannTyton',
     category: 'Electronic',
@@ -41,25 +22,16 @@ const MANUFACTURERS = [
     productImage: '/manufacturers/jdi-product.png',
   },
   {
-    name: 'Marquardt',
+    name: 'OmniOn Power',
     category: 'Electronic',
-    desc: 'One of the world\'s leading manufacturers of electromechanical and electronic switches and switching systems. Global market leader in power tool switches spanning automotive, appliances, and e-bikes.',
-    markets: ['Automotive', 'Industrial', 'Off-Road'],
-    website: 'https://www.marquardt.com',
-    logo: '/manufacturers/marquardt-logo.png',
-    productImage: '/manufacturers/marquardt-product.png',
+    desc: 'Complete power solution portfolio: Front End AC/DC Rectifiers, DC/DC Converters, board-mounted isolated and non-isolated solutions for industrial, medical, military, computing, and telecom markets.',
+    markets: ['Industrial', 'Medical', 'Military', 'Telecom'],
+    website: 'https://www.omnion.com',
+    logo: '/manufacturers/omnion-logo.png',
+    productImage: '/manufacturers/omnion-product.png',
   },
   {
-    name: 'MSSL Wiring Systems',
-    category: 'Electronic',
-    desc: 'Complete wiring harness solutions: design, development, prototyping, validation, and manufacturing for passenger cars, commercial vehicles, off-road, and medical diagnostic equipment.',
-    markets: ['Automotive', 'Medical', 'Off-Road'],
-    website: 'https://placeholder.com',
-    logo: '/manufacturers/mssl-logo.png',
-    productImage: '/manufacturers/mssl-product.png',
-  },
-  {
-    name: 'IRC / TT Electronics',
+    name: 'TT Electronics – IRC',
     category: 'Electronic',
     desc: 'Designs and manufactures resistors and precision resistor networks. Trusted by designers for critical applications from space flight controllers to medical defibrillators.',
     markets: ['Medical', 'Military', 'Industrial'],
@@ -68,7 +40,7 @@ const MANUFACTURERS = [
     productImage: '/manufacturers/irc-product.png',
   },
   {
-    name: 'Optek / TT Electronics',
+    name: 'TT Electronics – Optek',
     category: 'Electronic',
     desc: 'Innovative optoelectronic solutions for sensing and illumination. Standard and application-specific lighting components for signage, automotive, entertainment, and high-reliability applications.',
     markets: ['Automotive', 'Industrial', 'Medical'],
@@ -77,31 +49,13 @@ const MANUFACTURERS = [
     productImage: '/manufacturers/optek-product.png',
   },
   {
-    name: 'BI Technologies / TT Electronics',
+    name: 'TT Electronics – BI',
     category: 'Electronic',
     desc: 'Sensors and assemblies for the world\'s leading businesses. Precision potentiometers, panel pots, tactile switches, and magnetic components for transportation and industrial markets.',
     markets: ['Industrial', 'Automotive'],
     website: 'https://www.ttelectronics.com',
     logo: '/manufacturers/bi-logo.png',
     productImage: '/manufacturers/bi-product.png',
-  },
-  {
-    name: 'Viking Technology',
-    category: 'Electronic',
-    desc: 'Global leader in DRAM memory and Flash storage solutions, from high-performance computing SSDs to industrial, telecom, military/defense, and enterprise markets.',
-    markets: ['Military', 'Industrial', 'Enterprise'],
-    website: 'https://placeholder.com',
-    logo: '/manufacturers/viking-logo.png',
-    productImage: '/manufacturers/viking-product.png',
-  },
-  {
-    name: 'OmniOn Power',
-    category: 'Electronic',
-    desc: 'Complete power solution portfolio: Front End AC/DC Rectifiers, DC/DC Converters, board-mounted isolated and non-isolated solutions for industrial, medical, military, computing, and telecom markets.',
-    markets: ['Industrial', 'Medical', 'Military', 'Telecom'],
-    website: 'https://placeholder.com',
-    logo: '/manufacturers/omnion-logo.png',
-    productImage: '/manufacturers/omnion-product.png',
   },
   {
     name: 'HellermannTyton',
@@ -120,6 +74,15 @@ const MANUFACTURERS = [
     website: 'https://www.kleintools.com',
     logo: '/manufacturers/klein-logo.png',
     productImage: '/manufacturers/klein-product.png',
+  },
+  {
+    name: 'Superior Tray Systems',
+    category: 'Electrical',
+    desc: 'American-made cable tray systems engineered for demanding industrial, commercial, and infrastructure installations. Full line of ladder, ventilated, and solid-bottom trays with all associated fittings.',
+    markets: ['Industrial', 'Commercial', 'OEM'],
+    website: 'https://www.superiortray.com',
+    logo: null,
+    productImage: null,
   },
 ];
 
