@@ -61,7 +61,7 @@ const INSIDE_SALES = [
   {
     name: 'Cindy Amundsen',
     title: 'Inside Sales',
-    email: null,
+    email: '',
     phone: '651.325.8594',
     linkedin: 'https://www.linkedin.com/in/cindy-amundsen-4117711b/',
     photo: '/team-cindy.png',
